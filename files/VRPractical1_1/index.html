@@ -4,11 +4,220 @@
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+      <a-plane position="10 0 0" rotation="-45 -45 0" width="4" height="4" src="https://target.scene7.com/is/image/Target/GUEST_3abe4c6c-051a-46ff-af93-df0079064c5e?wid=300&hei=300&fmt=pjpeg"></a-plane>
+      <a-box position="0 1 -4" width="3" height="2" depth="6.85" wireframe = "true">
+        <a-box position="0 -.5 0" width="3" height="0.5" depth="2" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #wheels
+        <a-cylinder position="-1.5 -.5 -1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="1.5 -.5 -1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="-1.5 -.5 1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="1.5 -.5 1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-circle position="-1.75 -.5 -1.55" radius="0.4" height="0.5" depth="2" rotation= "0 270 0"> </a-circle>
+        <a-circle position="1.75 -.5 -1.55" radius="0.4" height="0.5" depth="2" rotation= "0 90 0"> </a-circle>
+        <a-circle position="-1.75 -.5 1.55" radius="0.4" height="0.5" depth="2" rotation= "0 270 0"> </a-circle>
+        <a-circle position="1.75 -.5 1.55" radius="0.4" height="0.5" depth="2" rotation= "0 90 0"> </a-circle>
+
+        #frame
+        <a-box position="0 -.5 0" width="2" height="0.5" depth="6"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0 0" width="2" height="0.5" depth="4.5"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 -.5 2.75" width="3" height="0.5" depth="1"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>        
+        <a-box position="0 -.1 2.75" width="1.75" height="0.2" depth="1.3" rotation="25 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 -.5 -2.55" width="3" height="0.5" depth="0.9"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #spoiler
+        <a-box position="0 0 -2.6" width="3" height="0.5" depth="0.8"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0.8 -2.6" width="2.6" height="0.3" depth="0.8"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.5 -2.6" width="1" height="0.4" depth="0.8"  rotation="0 0 -100" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.5 -2.6" width="1" height="0.4" depth="0.8"  rotation="0 0 100"src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #headlights
+        <a-box position="-1.2 -.15 2.65" width="0.65" height="0.2" depth="1" rotation="0 0 0" color="yellow" src="https://m.media-amazon.com/images/I/61cQnhpYLaL._UF894,1000_QL80_.jpg"></a-box>
+        <a-box position="1.2 -.15 2.65" width="0.65" height="0.2" depth="1" rotation="0 0 0" color="yellow" src="https://m.media-amazon.com/images/I/61cQnhpYLaL._UF894,1000_QL80_.jpg"></a-box>
+        <a-box position="-1.2 0.02 2.6" width="0.65" height="0.15" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.02 2.6" width="0.65" height="0.15" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #windshield n stuff
+        <a-box position="0 0.5 1.75" width="2" height="0.2" depth="1" rotation="35 0 0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+        <a-box position="-1 0.5 1.75" width="0.2" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1 0.5 1.75" width="0.2" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #top of car
+        <a-box position="0 0.8 0.4" width="2" height="0.2" depth="2" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0.5 -0.8" width="2" height="0.2" depth="1" rotation="135 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #window thingys
+        <a-triangle position="1 0.3 1.5" width="3" height="0.2" depth="1" rotation="0 90 -25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="-1 0.3 1.5" width="3" height="0.2" depth="1" rotation="0 270 25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="1 0.3 -0.7" width="3" height="0.2" depth="1" rotation="0 90 25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="-1 0.3 -0.7" width="3" height="0.2" depth="1" rotation="0 270 -25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-box position="-0.9 0.5 0.4" width="1.8" height="0.2" depth="0.5" rotation="90 0 90" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+        <a-box position="0.9 0.5 0.4" width="1.8" height="0.2" depth="0.5" rotation="90 0 90" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+
+
+        #tire rims
+        <a-box position="1.2 -.15 2.2" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.1 1.5" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 0.8" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 -0.9" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.1 -1.6" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 -2.3" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 2.2" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.1 1.5" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 0.8" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 -0.9" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.1 -1.6" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 -2.3" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+
+      </a-box>
+
+
+
+      <a-box position="-6 1 -2" width="3" height="2" depth="6.85" rotation="0 -45 0" wireframe = "true">
+        <a-box position="0 -.5 0" width="3" height="0.5" depth="2" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #wheels
+        <a-cylinder position="-1.5 -.5 -1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="1.5 -.5 -1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="-1.5 -.5 1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="1.5 -.5 1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-circle position="-1.75 -.5 -1.55" radius="0.4" height="0.5" depth="2" rotation= "0 270 0"> </a-circle>
+        <a-circle position="1.75 -.5 -1.55" radius="0.4" height="0.5" depth="2" rotation= "0 90 0"> </a-circle>
+        <a-circle position="-1.75 -.5 1.55" radius="0.4" height="0.5" depth="2" rotation= "0 270 0"> </a-circle>
+        <a-circle position="1.75 -.5 1.55" radius="0.4" height="0.5" depth="2" rotation= "0 90 0"> </a-circle>
+
+        #frame
+        <a-box position="0 -.5 0" width="2" height="0.5" depth="6"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0 0" width="2" height="0.5" depth="4.5"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 -.5 2.75" width="3" height="0.5" depth="1"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>        
+        <a-box position="0 -.1 2.75" width="1.75" height="0.2" depth="1.3" rotation="25 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 -.5 -2.55" width="3" height="0.5" depth="0.9"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #spoiler
+        <a-box position="0 0 -2.6" width="3" height="0.5" depth="0.8"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0.8 -2.6" width="2.6" height="0.3" depth="0.8"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.5 -2.6" width="1" height="0.4" depth="0.8"  rotation="0 0 -100" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.5 -2.6" width="1" height="0.4" depth="0.8"  rotation="0 0 100"src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #headlights
+        <a-box position="-1.2 -.15 2.65" width="0.65" height="0.2" depth="1" rotation="0 0 0" color="yellow" src="https://m.media-amazon.com/images/I/61cQnhpYLaL._UF894,1000_QL80_.jpg"></a-box>
+        <a-box position="1.2 -.15 2.65" width="0.65" height="0.2" depth="1" rotation="0 0 0" color="yellow" src="https://m.media-amazon.com/images/I/61cQnhpYLaL._UF894,1000_QL80_.jpg"></a-box>
+        <a-box position="-1.2 0.02 2.6" width="0.65" height="0.15" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.02 2.6" width="0.65" height="0.15" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #windshield n stuff
+        <a-box position="0 0.5 1.75" width="2" height="0.2" depth="1" rotation="35 0 0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+        <a-box position="-1 0.5 1.75" width="0.2" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1 0.5 1.75" width="0.2" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #top of car
+        <a-box position="0 0.8 0.4" width="2" height="0.2" depth="2" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0.5 -0.8" width="2" height="0.2" depth="1" rotation="135 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #window thingys
+        <a-triangle position="1 0.3 1.5" width="3" height="0.2" depth="1" rotation="0 90 -25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="-1 0.3 1.5" width="3" height="0.2" depth="1" rotation="0 270 25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="1 0.3 -0.7" width="3" height="0.2" depth="1" rotation="0 90 25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="-1 0.3 -0.7" width="3" height="0.2" depth="1" rotation="0 270 -25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-box position="-0.9 0.5 0.4" width="1.8" height="0.2" depth="0.5" rotation="90 0 90" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+        <a-box position="0.9 0.5 0.4" width="1.8" height="0.2" depth="0.5" rotation="90 0 90" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+
+
+        #tire rims
+        <a-box position="1.2 -.15 2.2" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.1 1.5" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 0.8" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 -0.9" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.1 -1.6" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 -2.3" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 2.2" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.1 1.5" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 0.8" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 -0.9" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.1 -1.6" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 -2.3" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+
+      </a-box>
+
+
+
+
+
+
+
+
+      <a-box position="6 1 -2" width="3" height="2" depth="6.85" rotation="90 0 0" wireframe = "true">
+        <a-box position="0 -.5 0" width="3" height="0.5" depth="2" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #wheels
+        <a-cylinder position="-1.5 -.5 -1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="1.5 -.5 -1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="-1.5 -.5 1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-cylinder position="1.5 -.5 1.55" radius="0.5" height="0.5" depth="2" rotation= "0 0 90" src="https://media.istockphoto.com/id/502936829/photo/car-tires.jpg?s=612x612&w=0&k=20&c=3jn6wQtmUxnOdDEOOIfz3VGf_CXwvL7KBwKR_HxfPcU="></a-cylinder>
+        <a-circle position="-1.75 -.5 -1.55" radius="0.4" height="0.5" depth="2" rotation= "0 270 0"> </a-circle>
+        <a-circle position="1.75 -.5 -1.55" radius="0.4" height="0.5" depth="2" rotation= "0 90 0"> </a-circle>
+        <a-circle position="-1.75 -.5 1.55" radius="0.4" height="0.5" depth="2" rotation= "0 270 0"> </a-circle>
+        <a-circle position="1.75 -.5 1.55" radius="0.4" height="0.5" depth="2" rotation= "0 90 0"> </a-circle>
+
+        #frame
+        <a-box position="0 -.5 0" width="2" height="0.5" depth="6"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0 0" width="2" height="0.5" depth="4.5"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 -.5 2.75" width="3" height="0.5" depth="1"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>        
+        <a-box position="0 -.1 2.75" width="1.75" height="0.2" depth="1.3" rotation="25 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 -.5 -2.55" width="3" height="0.5" depth="0.9"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #spoiler
+        <a-box position="0 0 -2.6" width="3" height="0.5" depth="0.8"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0.8 -2.6" width="2.6" height="0.3" depth="0.8"  src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.5 -2.6" width="1" height="0.4" depth="0.8"  rotation="0 0 -100" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.5 -2.6" width="1" height="0.4" depth="0.8"  rotation="0 0 100"src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #headlights
+        <a-box position="-1.2 -.15 2.65" width="0.65" height="0.2" depth="1" rotation="0 0 0" color="yellow" src="https://m.media-amazon.com/images/I/61cQnhpYLaL._UF894,1000_QL80_.jpg"></a-box>
+        <a-box position="1.2 -.15 2.65" width="0.65" height="0.2" depth="1" rotation="0 0 0" color="yellow" src="https://m.media-amazon.com/images/I/61cQnhpYLaL._UF894,1000_QL80_.jpg"></a-box>
+        <a-box position="-1.2 0.02 2.6" width="0.65" height="0.15" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.02 2.6" width="0.65" height="0.15" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #windshield n stuff
+        <a-box position="0 0.5 1.75" width="2" height="0.2" depth="1" rotation="35 0 0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+        <a-box position="-1 0.5 1.75" width="0.2" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1 0.5 1.75" width="0.2" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #top of car
+        <a-box position="0 0.8 0.4" width="2" height="0.2" depth="2" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="0 0.5 -0.8" width="2" height="0.2" depth="1" rotation="135 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+        #window thingys
+        <a-triangle position="1 0.3 1.5" width="3" height="0.2" depth="1" rotation="0 90 -25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="-1 0.3 1.5" width="3" height="0.2" depth="1" rotation="0 270 25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="1 0.3 -0.7" width="3" height="0.2" depth="1" rotation="0 90 25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-triangle position="-1 0.3 -0.7" width="3" height="0.2" depth="1" rotation="0 270 -25" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-triangle>
+        <a-box position="-0.9 0.5 0.4" width="1.8" height="0.2" depth="0.5" rotation="90 0 90" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+        <a-box position="0.9 0.5 0.4" width="1.8" height="0.2" depth="0.5" rotation="90 0 90" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5zm2QTO2adByCI5AUzklq4Q-PN8EWM3JJ6A&s"></a-box>
+
+
+        #tire rims
+        <a-box position="1.2 -.15 2.2" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.1 1.5" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 0.8" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 -0.9" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 0.1 -1.6" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="1.2 -.15 -2.3" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 2.2" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.1 1.5" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 0.8" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 -0.9" width="0.65" height="0.2" depth="1" rotation="35 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 0.1 -1.6" width="0.65" height="0.2" depth="1" rotation="0 0 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+        <a-box position="-1.2 -.15 -2.3" width="0.65" height="0.2" depth="1" rotation="35 180 0" src="https://media.istockphoto.com/id/1263572009/photo/red-metallic-car-paint-surface-wallpaper-background.jpg?s=612x612&w=0&k=20&c=xFwmlLYRnBlMjHyfL-krxfeMlDayB2cke0WLqF7WvIQ="></a-box>
+
+
+      </a-box>
+
+
+      <a-sky color="gray"></a-sky>
     </a-scene>
   </body>
 </html>
