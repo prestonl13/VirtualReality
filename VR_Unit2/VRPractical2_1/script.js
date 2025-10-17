@@ -14,7 +14,20 @@ window.addEventListener("DOMContentLoaded",function() {
   }
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
 
+  for (let i = 0; i < 10; i++) {
+    let x = rnd(-15, 15);
+    let y = rnd(5, 10);
+    let z = rnd(-15, 15);
+    createCloud(x, y, z);
+  }
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
+
+  for (let i = 0; i < 5; i++) {
+    let x = rnd(-20, 20);
+    let z = rnd(-20, 20);
+    createHouse(x, z);
+  }
+  
 })
 
 /* Task 1: Create a function createCloud that,
@@ -26,6 +39,32 @@ window.addEventListener("DOMContentLoaded",function() {
       6) Add the cloud entity to the scene
 */
 
+function createCloud(x, y, z) {
+  let cloud = document.createElement("a-entity");
+
+  let puff1 = document.createElement("a-sphere");
+  puff1.setAttribute("color", "blue");
+  puff1.setAttribute("radius", 1.2);
+  puff1.setAttribute("position", { x: 0, y: 0.3, z: 0 });
+  cloud.append(puff1);
+
+  let puff2 = document.createElement("a-sphere");
+  puff2.setAttribute("color", "black");
+  puff2.setAttribute("radius", 1.5);
+  puff2.setAttribute("position", { x: 1.2, y: 0.4, z: -0.3 });
+  cloud.append(puff2);
+
+  let puff3 = document.createElement("a-sphere");
+  puff3.setAttribute("color", "green");
+  puff3.setAttribute("radius", 2);
+  puff3.setAttribute("position", { x: -1.1, y: 0.2, z: 0.2 });
+  cloud.append(puff3);
+
+  cloud.setAttribute("position", { x: x, y: y, z: z });
+  scene.append(cloud);
+}
+
+
 /* Task 3: Create a function createHouse that,
       1) Accept an x and z position for where to place the house "entity"
       2) Create an entity to store all the components that will make up the house
@@ -35,17 +74,43 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set house entities position to those passed in to the function.
       6) Add the house entity to the scene
 */
+
+function createHouse(x, z) {
+  let house = document.createElement("a-entity");
+
+  // Base
+  let base = document.createElement("a-box");
+  base.setAttribute("color", "#cc9966");
+  base.setAttribute("width", "2");
+  base.setAttribute("height", "1.5");
+  base.setAttribute("depth", "2");
+  house.append(base);
+
+  // Roof (use a cylinder tilted to look like a triangle prism)
+  let roof = document.createElement("a-cone");
+  roof.setAttribute("color", "red");
+  roof.setAttribute("height", "1.5");
+  roof.setAttribute("radius-bottom", "1.5");
+  roof.setAttribute("position", "0 1.5 0");
+  house.append(roof);
+
+  house.setAttribute("position", { x: x, y: 0, z: z });
+  scene.append(house);
+}
+
+
+
 function createTree(x, y, z){
   let tree = document.createElement("a-entity");
   
   let pines = document.createElement("a-cone");
   pines.setAttribute("color","green");
   pines.setAttribute("position","0 2 0");
-  pines.setAttribute("height","2");
+  pines.setAttribute("height","3");
   tree.append( pines );
 
   let stump = document.createElement("a-cylinder");
-  stump.setAttribute("position","0 1 0");
+  stump.setAttribute("position","0 .5 0");
   stump.setAttribute("color","brown");
   stump.setAttribute("radius","0.25");
   tree.append( stump );
