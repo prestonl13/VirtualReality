@@ -1,5 +1,10 @@
 class Rocket{
-  constructor(x,y,z){
+  constructor(x,y,z, speed){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.speed = speed;
+
     this.obj = document.createElement("a-entity");
   
     let top = document.createElement("a-cone");
@@ -21,7 +26,15 @@ class Rocket{
     fire.setAttribute("-180 0 0");
     this.obj.append( fire );
   
-    this.obj.setAttribute("position",{x:x, y:y, z:z});
+    this.obj.setAttribute("position",{x:this.x, y:this.y, z:this.z});
     scene.append( this.obj )
   }
+
+  launch(){
+    this.y += this.speed;
+    this.obj.setAttribute("position", {x:this.x, y:this.y, z:this.z});
+  }
+
+
 }
+
