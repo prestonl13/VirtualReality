@@ -6,6 +6,25 @@ let ufos = [];
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene"); 
 
+  for(let i = 0; i < 75; i++){
+    let x = rnd(-50,50);
+    let z = rnd(-50,50);
+    let tree = new Tree(x, 0 , z);
+  }
+
+  for(let i = 0; i < 100; i++){
+    let x = rnd(-50,50);
+    let y = rnd(7,10);
+    let z = rnd(-50,50);
+    let cloud = new Cloud(x, y , z);
+  }
+
+  for(let i = 0; i < 50; i++){
+    let x = rnd(-50,50);
+    let z = rnd(-50,50);
+    let house = new House(x, 0 , z);
+  }
+
   for(let i = 0; i < 100; i++){
     let x = rnd(-50,50);
     let y = rnd(-10,-1);

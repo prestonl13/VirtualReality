@@ -9,7 +9,7 @@ class Ufo{
   
     let sphere = document.createElement("a-sphere");
     sphere.setAttribute("radius","3.5");
-    sphere.setAttribute("color","blue");
+    sphere.setAttribute("src","https://images.vexels.com/media/users/3/301759/isolated/preview/4e027a949fab59725ff11730dde5dfce-space-alien-kawaii-cartoon-character.png");
     sphere.setAttribute("position","0 1.4 0");
     sphere.setAttribute("scale","1 0.7 1");
     this.obj.append( sphere );
@@ -17,7 +17,7 @@ class Ufo{
     let body = document.createElement("a-cylinder");
     body.setAttribute("position","0 0 0");
     body.setAttribute("color","gray");
-    body.setAttribute("height","1");
+    body.setAttribute("height","1.5");
     body.setAttribute("radius","5");
     this.obj.append( body );
   
@@ -28,6 +28,7 @@ class Ufo{
   invade(){
     this.y += this.speed;
     this.obj.setAttribute("position", {x:this.x, y:this.y, z:this.z});
+    
   }
 
 
