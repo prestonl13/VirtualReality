@@ -55,7 +55,7 @@ function createCloud(x, y, z) {
   cloud.append(puff2);
 
   let puff3 = document.createElement("a-sphere");
-  puff3.setAttribute("color", "white");
+  puff3.setAttribute("color", "white   ");
   puff3.setAttribute("radius", 1.1);
   puff3.setAttribute("position", { x: -1.1, y: 0.2, z: 0.2 });
   cloud.append(puff3);
