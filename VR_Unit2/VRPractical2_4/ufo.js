@@ -26,7 +26,12 @@ class Ufo{
   }
 
   invade(){
-    this.y += this.speed;
+    if (this.y < 0){
+      this.y = 0;
+    }
+    else{
+      this.y += this.speed;
+    }
     this.obj.setAttribute("position", {x:this.x, y:this.y, z:this.z});
     
   }
