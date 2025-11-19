@@ -11,18 +11,18 @@
 */
 
 let maze = [
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
+  "x-xxxxxxxxxxxxxxxxxxxx",
+  "x-x-------x-xx------xx",
+  "x-x-x-x-x------xxxx--x",
+  "x----xx-x-x-xxxx---x-x",
+  "xxx-x--xx-x-x----x-x-x",
+  "x---x-x--x--x-x--x---x",
+  "x-x---xx-x-xx---x--x-x",
+  "x-x-x----x-----xxx--xx",
+  "x-x-xx-x-x-x-x-xx-x-xx",
+  "xx--x-x--x-x------x--",
+  "x--x---------x-x---xxx",
+  "xxxxxxxxxxxxxxxxxxxxxx",
 ];
 
 /* Challenge 2
@@ -34,13 +34,14 @@ let scene;
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   for(let r = 0; r < maze.length; r++){
-    /* Challenge 3
-      Choose a technique to traverse the each character in the string.
-    */ 
-    /* Challenge 4
-       Make an appropriate decision based on the characters you chose to enter 
-       in the maze.  Create an instance of the corresponding object.
-    */
+    let row = maze[r];
+    let cols = row.split("");
+    for(let c = 0; c < cols.length; c++){
+      if(cols[c] == "x"){
+        new Wall(c,1,r)
+      }
+    }
+    
   }
 
 })
