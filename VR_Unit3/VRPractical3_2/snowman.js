@@ -3,11 +3,11 @@ class mySnowman {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.dx = 0.1;
+        this.dz = 0.1;
         this.rotate = false;
 
 
-        this.obj = snowmanTemplate.cloneNode(true);
+        this.obj = car.cloneNode(true);
 
 
         this.obj.setAttribute("position", { x: this.x, y: this.y, z: this.z });
@@ -24,7 +24,7 @@ class mySnowman {
 
     spin() {
         if (this.rotate) {
-            this.x += this.dx;
+            this.z += this.dz;
             this.obj.setAttribute("position", { x: this.x, y: this.y, z: this.z });
         }
     }
