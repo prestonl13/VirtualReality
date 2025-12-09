@@ -1,9 +1,30 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0;
+let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 1000, enemy_killed = 0, score, time, t = 60;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
+  time = document.getElementById("time");
+
+
+   for(let i = 0; i < 75; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    let tree = new Tree(x, 1 , z);
+  }
+
+  for(let i = 0; i < 100; i++){
+    let x = rnd(-20,20);
+    let y = rnd(10,14);
+    let z = rnd(-20,20);
+    let cloud = new Cloud(x, y , z);
+  }
+
+  for(let i = 0; i < 50; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    let house = new House(x, 0, z);
+  }
 
   window.addEventListener("keydown",function(e){
     //User can only fire with they press the spacebar and have sufficient ammo
@@ -14,7 +35,7 @@ window.addEventListener("DOMContentLoaded",function() {
   })
   
   setTimeout(loop,100);
-  setTimeout(countdown,100);
+  setTimeout(countdown, 100);
 })
 
 function loop(){
@@ -25,8 +46,14 @@ function loop(){
   window.requestAnimationFrame(loop);
 }
 
-function countdown(){
+//function countdown(){
 
+  //setTimeout(countdown,1000);
+//}
+
+function countdown(){
+  time.setAttribute("value",`Time: ${t}`);
+  t--;
   setTimeout(countdown,1000);
 }
 
