@@ -1,10 +1,11 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 1000, enemy_killed = 0, score, time, t = 60;
+let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 1000, enemy_killed = 0, time, t = 60;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
   time = document.getElementById("time");
+  ammo = document.getElementById("ammo");
 
 
    for(let i = 0; i < 75; i++){
@@ -46,15 +47,11 @@ function loop(){
   window.requestAnimationFrame(loop);
 }
 
-//function countdown(){
-
-  //setTimeout(countdown,1000);
-//}
-
 function countdown(){
   time.setAttribute("value",`Time: ${t}`);
   t--;
   setTimeout(countdown,1000);
+  ammo.setAttribute("value",`Ammo: ${ammo_count}`);
 }
 
 function distance(obj1,obj2){
