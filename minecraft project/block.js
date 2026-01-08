@@ -111,24 +111,24 @@ class Block{
 
     //break blocks
     this.blockEl = this.obj;
-    this.destroy1 = breaking1;
-    this.destroy2 = breaking2;
-    this.destroy3 = breaking3;
+    //this.destroy1 = breaking1;
+    //this.destroy2 = breaking2;
+    //this.destroy3 = breaking3;
     let hitCount = 0;
     this.obj.addEventListener('mousedown', () => {
       console.log('Block hit at', this.x, this.y, this.z);
       hitCount++;
-      if (hitCount == 1) {
-        this.destroy1.setAttribute('opacity', '1');
-      }
-      if (hitCount == 2) {
-        this.destroy1.setAttribute('opacity', '0');
-        this.destroy2.setAttribute('opacity', '1');
-      }
-      if (hitCount == 3) {
-        this.destroy2.setAttribute('opacity', '0');
-        this.destroy3.setAttribute('opacity', '1');
-      }
+      //if (hitCount == 1) {
+        //this.destroy1.setAttribute('opacity', '1');
+      //}
+      //if (hitCount == 2) {
+        //this.destroy1.setAttribute('opacity', '0');
+        //this.destroy2.setAttribute('opacity', '1');
+      //}
+      //if (hitCount == 3) {
+        //this.destroy2.setAttribute('opacity', '0');
+        //this.destroy3.setAttribute('opacity', '1');
+      //}
       if (hitCount == 4) {
         console.log('Block broken at', this.x, this.y, this.z);
         scene.removeChild(this.blockEl);
