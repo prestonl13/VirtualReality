@@ -16,20 +16,20 @@ window.addEventListener("DOMContentLoaded",function() {
     }
   }
 
-  window.addEventListener("keypress", function(e){
-    if (e.key == "e") {
-      spawnBlock();
-    }
-  })
+  //window.addEventListener("keypress", function(e){
+    //if (e.key == "e") {
+    //  spawnBlock();
+    //}
+  //})
 
-  function spawnBlock(){
-    let cam = document.querySelector("#camera");
-    let pos = cam.getAttribute("position");
-    let spawnx = pos.x;
-    let spawny = pos.y + 0.5;
-    let spawnz = pos.z - 3;
-    let block = new Block(spawnx, spawny , spawnz);
-};
+  //function spawnBlock(){
+    //let cam = document.querySelector("#camera");
+    //let pos = cam.getAttribute("position");
+    //let spawnx = pos.x;
+    //let spawny = pos.y + 0.5;
+    //let spawnz = pos.z - 3;
+    //let block = new Block(spawnx, spawny , spawnz);
+  //};
 
   // start ticking the countdown every second
   setInterval(countdown, 1000);

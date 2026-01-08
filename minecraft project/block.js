@@ -3,14 +3,17 @@ class Block{
     this.x = x;
     this.y = y;
     this.z = z;
-    this.obj = document.createElement("a-box");
-    this.obj.setAttribute("id","Block");
-    this.obj.setAttribute("width","1");
-    this.obj.setAttribute("height","1");
-    this.obj.setAttribute("depth","1");
+    this.obj = document.createElement("a-entity");
     this.obj.setAttribute("static-body", "");
     this.obj.setAttribute("position",{x:x,y:y,z:z});    
     this.obj.setAttribute("cursor-listener", "");
+
+    let box = document.createElement("a-box");
+    box.setAttribute("id","Block");
+    box.setAttribute("width","1");
+    box.setAttribute("height","1");
+    box.setAttribute("depth","1");
+    this.obj.append(box);
 
 
     let top = document.createElement("a-plane");
@@ -82,8 +85,8 @@ class Block{
     this.obj.append(frame);
 
     //let breaking1 = document.createElement("a-plane");
-    //breaking1.setAttribute("width","1.02");
-    //breaking1.setAttribute("height","1.02");
+    //breaking1.setAttribute("width","1.04");
+    //breaking1.setAttribute("height","1.04");
     //breaking1.setAttribute("src", "breaking textures/destroy_stage_0.png");
     //breaking1.setAttribute("side","double");
     //breaking1.setAttribute("rotation","-90 0 0");
@@ -100,10 +103,36 @@ class Block{
       this.frameEl.setAttribute('opacity', '0');
     });
 
-    //placing blocks
+    // placing blocks
+    //this.obj.addEventListener('mousedown', () => {
+      //console.log('Block clicked at', this.x, this.y, this.z);
+      //new Block(this.x, this.y + 1, this.z);
+    //});
+
+    //break blocks
+    this.blockEl = this.obj;
+    this.destroy1 = breaking1;
+    this.destroy2 = breaking2;
+    this.destroy3 = breaking3;
+    let hitCount = 0;
     this.obj.addEventListener('mousedown', () => {
-      console.log('Block clicked at', this.x, this.y, this.z);
-      new Block(this.x, this.y + 1, this.z);
+      console.log('Block hit at', this.x, this.y, this.z);
+      hitCount++;
+      if (hitCount == 1) {
+        this.destroy1.setAttribute('opacity', '1');
+      }
+      if (hitCount == 2) {
+        this.destroy1.setAttribute('opacity', '0');
+        this.destroy2.setAttribute('opacity', '1');
+      }
+      if (hitCount == 3) {
+        this.destroy2.setAttribute('opacity', '0');
+        this.destroy3.setAttribute('opacity', '1');
+      }
+      if (hitCount == 4) {
+        console.log('Block broken at', this.x, this.y, this.z);
+        scene.removeChild(this.blockEl);
+      }
     });
 
     scene.append(this.obj);
@@ -111,5 +140,6 @@ class Block{
   outline(){
     if (this.frameEl) this.frameEl.setAttribute("opacity", "1");
   }
+
   
 }
