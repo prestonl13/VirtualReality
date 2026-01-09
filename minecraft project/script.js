@@ -3,7 +3,8 @@ let scene;
 let t = 10000;
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
-  // Create a 25x25 platform of Blocks centered at the origin
+  camera = document.querySelector("#cameraRig");
+  // 25x25
   timeText = document.querySelector("#timeText");
   const platformSize = 25;
   const half = Math.floor(platformSize / 2);
@@ -16,22 +17,36 @@ window.addEventListener("DOMContentLoaded",function() {
     }
   }
 
-  //window.addEventListener("keypress", function(e){
-    //if (e.key == "e") {
-    //  spawnBlock();
-    //}
-  //})
+  //breaking blocks 
+  window.addEventListener("keydown", (e) => { 
+    if (e.key === "x" && window.currentBlock) { 
+      window.currentBlock.breakBlock(); 
+    } 
+  });
 
-  //function spawnBlock(){
-    //let cam = document.querySelector("#camera");
-    //let pos = cam.getAttribute("position");
-    //let spawnx = pos.x;
-    //let spawny = pos.y + 0.5;
-    //let spawnz = pos.z - 3;
-    //let block = new Block(spawnx, spawny , spawnz);
-  //};
 
-  // start ticking the countdown every second
+  //jumping
+
+  let isJumping = false;
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === " " && !isJumping) {
+    isJumping = true;
+    camera.removeAttribute("animation");
+
+    setTimeout(() => {
+      camera.setAttribute("animation", {property: "position",to: "0 3 0",dur: 300,dir: "alternate",loop: 1,easing: "easeInOutQuad"
+      });
+    }, 0);
+    setTimeout(() => {
+      isJumping = false;
+    }, 550);
+  }
+});
+
+
+
+  
   setInterval(countdown, 1000);
 
 

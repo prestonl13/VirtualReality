@@ -3,8 +3,13 @@ class Block{
     this.x = x;
     this.y = y;
     this.z = z;
+    this.dx = 0.5;
+    this.dy = 0.5;
+    this.dz = 0.5;
+    this.breakable = true;
     this.obj = document.createElement("a-entity");
-    this.obj.setAttribute("static-body", "");
+    this.obj.setAttribute("static-body", "shape: box; friction: 1.0; restitution: 0;");
+    //this.obj.setAttribute("static-body", " ");
     this.obj.setAttribute("position",{x:x,y:y,z:z});    
     this.obj.setAttribute("cursor-listener", "");
 
@@ -84,62 +89,167 @@ class Block{
     frame.setAttribute("opacity","0");
     this.obj.append(frame);
 
-    //let breaking1 = document.createElement("a-plane");
-    //breaking1.setAttribute("width","1.04");
-    //breaking1.setAttribute("height","1.04");
-    //breaking1.setAttribute("src", "breaking textures/destroy_stage_0.png");
-    //breaking1.setAttribute("side","double");
-    //breaking1.setAttribute("rotation","-90 0 0");
-    //breaking1.setAttribute("position","0 0.51 0");
-    //this.obj.append(breaking1); 
+    let destroyStage1 = "breaking textures/destroy_stage_1.png";
+    let destroyStage2 = "breaking textures/destroy_stage_3.png";
+    let destroyStage3 = "breaking textures/destroy_stage_5.png";
+    let topBreak = document.createElement("a-image");
+    topBreak.setAttribute("width","1.03");
+    topBreak.setAttribute("height","1.03");
+    topBreak.setAttribute("src", destroyStage1);
+    topBreak.setAttribute("side","double");
+    topBreak.setAttribute("opacity","0");
+    topBreak.setAttribute("rotation","-90 0 0");
+    topBreak.setAttribute("position","0 0.51 0");
+    this.obj.append(topBreak);
+
+    // Right face (+X)
+    let rightBreak = document.createElement("a-image");
+    rightBreak.setAttribute("width","1.03");
+    rightBreak.setAttribute("height","1.03");
+    rightBreak.setAttribute("side","double");
+    rightBreak.setAttribute("opacity","0");
+    rightBreak.setAttribute("src", destroyStage1);
+    rightBreak.setAttribute("rotation","0 90 0");
+    rightBreak.setAttribute("position","0.51 0 0");
+    this.obj.append(rightBreak);
+
+    // Left face (-X)
+    let leftBreak = document.createElement("a-image");
+    leftBreak.setAttribute("width","1.02");
+    leftBreak.setAttribute("height","1.02");
+    leftBreak.setAttribute("side","double");
+    leftBreak.setAttribute("opacity","0");
+    leftBreak.setAttribute("src", destroyStage1);
+    leftBreak.setAttribute("rotation","0 -90 0");
+    leftBreak.setAttribute("position","-0.51 0 0");
+    this.obj.append(leftBreak);
+
+    // Front face (+Z)
+    let frontBreak = document.createElement("a-image");
+    frontBreak.setAttribute("width","1.03");
+    frontBreak.setAttribute("height","1.03");
+    frontBreak.setAttribute("side","double");
+    frontBreak.setAttribute("opacity","0");
+    frontBreak.setAttribute("src", destroyStage1);
+    frontBreak.setAttribute("rotation","0 0 0");
+    frontBreak.setAttribute("position","0 0 0.51");
+    this.obj.append(frontBreak);
+
+    // Back face (-Z)
+    let backBreak = document.createElement("a-image");
+    backBreak.setAttribute("width","1.03");
+    backBreak.setAttribute("height","1.03");
+    backBreak.setAttribute("side","double");
+    backBreak.setAttribute("opacity","0");
+    backBreak.setAttribute("src", destroyStage1);
+    backBreak.setAttribute("rotation","0 180 0");
+    backBreak.setAttribute("position","0 0 -0.51");
+    this.obj.append(backBreak);
+
+    // Bottom face
+    let bottomBreak = document.createElement("a-image");
+    bottomBreak.setAttribute("width","1.03");
+    bottomBreak.setAttribute("height","1.03");
+    bottomBreak.setAttribute("opacity","0");
+    bottomBreak.setAttribute("side","double");
+    bottomBreak.setAttribute("src", destroyStage1);
+    bottomBreak.setAttribute("rotation","90 0 0");
+    bottomBreak.setAttribute("position","0 -0.51 0");
+    this.obj.append(bottomBreak);
 
 
-    //outline stuff
+                                                                                 //outline stuff
     this.frameEl = frame;
     this.obj.addEventListener('mouseenter', () => {
+       window.currentBlock = this; // this is our global pointer to the current block user is hovering
       this.frameEl.setAttribute('opacity', '1');
     });
     this.obj.addEventListener('mouseleave', () => {
+      if (window.currentBlock === this) { 
+        window.currentBlock = null;
+      }
       this.frameEl.setAttribute('opacity', '0');
     });
 
-    // placing blocks
-    //this.obj.addEventListener('mousedown', () => {
-      //console.log('Block clicked at', this.x, this.y, this.z);
-      //new Block(this.x, this.y + 1, this.z);
-    //});
-
-    //break blocks
-    this.blockEl = this.obj;
-    //this.destroy1 = breaking1;
-    //this.destroy2 = breaking2;
-    //this.destroy3 = breaking3;
-    let hitCount = 0;
+                                                                                // placing blocks
     this.obj.addEventListener('mousedown', () => {
-      console.log('Block hit at', this.x, this.y, this.z);
-      hitCount++;
-      //if (hitCount == 1) {
-        //this.destroy1.setAttribute('opacity', '1');
-      //}
-      //if (hitCount == 2) {
-        //this.destroy1.setAttribute('opacity', '0');
-        //this.destroy2.setAttribute('opacity', '1');
-      //}
-      //if (hitCount == 3) {
-        //this.destroy2.setAttribute('opacity', '0');
-        //this.destroy3.setAttribute('opacity', '1');
-      //}
-      if (hitCount == 4) {
-        console.log('Block broken at', this.x, this.y, this.z);
-        scene.removeChild(this.blockEl);
-      }
+      console.log('Block clicked at', this.x, this.y, this.z);
+      new Block(this.x, this.y + 1, this.z);
     });
+
+                                                                               //break blocks
+
+    this.blockEl = this.obj;
+    this.stage1 = destroyStage1;
+    this.stage2 = destroyStage2;
+    this.stage3 = destroyStage3;
+    this.breaktop = topBreak;
+    this.breakbottom = bottomBreak;
+    this.breakright = rightBreak;
+    this.breakleft = leftBreak;
+    this.breakfront = frontBreak;
+    this.breakback = backBreak;
+    this.hitCount = 0;
 
     scene.append(this.obj);
   }
   outline(){
     if (this.frameEl) this.frameEl.setAttribute("opacity", "1");
   }
+  breakBlock() {
+    if (!this.breakable) return;
+     this.hitCount++;
+     console.log("Hit:", this.hitCount);
+      if (this.hitCount == 1) {
+        this.breaktop.setAttribute("opacity", "1");
+        this.breakbottom.setAttribute("opacity", "1");
+        this.breakright.setAttribute("opacity", "1");
+        this.breakleft.setAttribute("opacity", "1");
+        this.breakfront.setAttribute("opacity", "1");
+        this.breakback.setAttribute("opacity", "1");
+      }
+      if (this.hitCount == 2) {
+        this.breaktop.setAttribute("src", this.stage2);
+        this.breakbottom.setAttribute("src", this.stage2);
+        this.breakright.setAttribute("src", this.stage2);
+        this.breakleft.setAttribute("src", this.stage2);
+        this.breakfront.setAttribute("src", this.stage2);
+        this.breakback.setAttribute("src", this.stage2);
+      }
+      if (this.hitCount == 3) {
+        this.breaktop.setAttribute("src", this.stage3);
+        this.breakbottom.setAttribute("src", this.stage3);
+        this.breakright.setAttribute("src", this.stage3);
+        this.breakleft.setAttribute("src", this.stage3);
+        this.breakfront.setAttribute("src", this.stage3);
+        this.breakback.setAttribute("src", this.stage3);
+      }
+      if (this.hitCount >= 4){ 
+        console.log("Block broken at:", this.x, this.y, this.z); 
+        scene.removeChild(this.obj); 
+        let newBlock = new Block(this.x, this.y + 1, this.z);
+        newBlock.obj.setAttribute("scale", "0.5 0.5 0.5");
+        newBlock.obj.setAttribute("dynamic-body", "shape: box; friction: 0.8; restitution: 0.3; mass: 5;");
+        newBlock.obj.setAttribute("velocity", "0 0 0");
+        newBlock.obj.removeAttribute("static-body");
+        newBlock.breakable = false;
+      } 
+  }
+    
+    collectingBlock(){ 
+      console.log("Block collected at:", this.x, this.y, this.z);
+      this. x += this.dx;
+      this. y += this.dy;
+      this. z += this.dz;
+      this.dy -= 0.01; // gravity effect
+      this.blockEl.setAttribute("rotation", {x: this.x, y: this.y, z: this.z});
+      if (this.y < 0) {
+        this.y = 0;
+      }
+      if (this.y >1.5){
+        this.y =- this.dy
+      }
+    }
 
   
 }

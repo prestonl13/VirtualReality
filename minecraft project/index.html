@@ -10,15 +10,15 @@
   </head>
   <body>
   
-  <a-scene physics="debug: false">
+  <a-scene physics="debug: false; friction: 0.8; restitution: 0.3;">
 
   <!-- Floor -->
-  <a-plane static-body color="green" rotation="-90 0 0" side="double" width="50" height="50" opacity="0.5"></a-plane>
+  <a-plane static-body="friction: 0.8; restitution: 0;" color="green" rotation="-90 0 0" side="double" width="50" height="50" opacity="0.5"></a-plane>
   <a-sky src="skies/sunset.jpg" rotation="0 -90 0" side="double"></a-sky>
   
     <a-entity id="cameraRig" position="0 1.6 0">
-      <a-camera id="camera" kinema-body="radius: 0.8">
-        <a-image src = "chamoy pickle.png" position ="0.2 -0.1 -0.2" width="0.2" height="0.2"></a-image> 
+      <a-camera id="camera" kinema-body="radius: 0.8" look-controls="pointerLockEnabled: true">
+        <a-image src = "chamoy pickle.png" position ="0.2 -0.1 -0.2" width="0.15" height="0.2"></a-image> 
         <a-cursor>
         <!-- This is just a timer for now bc we cant put colons as a variable  -->
              <a-text id="timeText" position="-3.5 1.5 -1" value="Time: " color="blue"></a-text>
