@@ -33,7 +33,6 @@ window.addEventListener("keydown", (e) => {
   if (e.key === " " && !isJumping) {
     isJumping = true;
     camera.removeAttribute("animation");
-
     setTimeout(() => {
       camera.setAttribute("animation", {property: "position",to: "0 3 0",dur: 300,dir: "alternate",loop: 1,easing: "easeInOutQuad"
       });
