@@ -1,9 +1,14 @@
 let rnd = (l,u) => Math.random()*(u-l)+l;
 let scene;
 let t = 10000;
+let collectedCount = 0;
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("#cameraRig");
+  collectedTxt = document.querySelector("#CollectedText");
+  let playerCamera = document.querySelector("#camera");
+  // array to track dropped (collectible) block entities
+  window.droppedBlocks = window.droppedBlocks || [];
   // 25x25
   timeText = document.querySelector("#timeText");
   const platformSize = 25;
@@ -16,6 +21,31 @@ window.addEventListener("DOMContentLoaded",function() {
       new Block(x, y, z);
     }
   }
+
+// collecting
+
+setInterval(() => {
+  if (!window.droppedBlocks) return;
+  let newList = [];
+  for (let i = 0; i < window.droppedBlocks.length; i++) {
+    let b = window.droppedBlocks[i];
+    if (!b.obj) { 
+    } else {
+      let d = distance(playerCamera, b.obj);
+
+      if (d < 1) {
+        scene.removeChild(b.obj);
+        collectedCount++; 
+        console.log("Collected:", collectedCount);
+      } else {
+        newList.push(b);
+      }
+    }
+  }
+
+  window.droppedBlocks = newList;
+}, 200);
+
 
   //breaking blocks 
   window.addEventListener("keydown", (e) => { 
@@ -43,16 +73,30 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-
-
-  
   setInterval(countdown, 1000);
-
-
-
+  // start the on-screen update loop
+  loop();
 });
 
 function countdown(){
    t--; 
    timeText.setAttribute("value", `Time: ${t}`);
+}
+
+function loop(){
+  collectedTxt.setAttribute("value", `Collected Blocks: ${collectedCount}`)
+
+   window.requestAnimationFrame(loop);
+}
+
+function distance(obj1,obj2){
+  let x1 = obj1.object3D.position.x;
+  let y1 = obj1.object3D.position.y;
+  let z1 = obj1.object3D.position.z;
+  let x2 = obj2.object3D.position.x;
+  let y2 = obj2.object3D.position.y;
+  let z2 = obj2.object3D.position.z;
+
+  let d = Math.sqrt(Math.pow(x1-x2,2) + Math.pow(y1-y2,2) + Math.pow(z1-z2,2));
+  return d;
 }

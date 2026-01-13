@@ -19,9 +19,11 @@
     <a-entity id="cameraRig" position="0 1.6 0">
       <a-camera id="camera" kinema-body="radius: 0.8" look-controls="pointerLockEnabled: true">
         <a-image src = "chamoy pickle.png" position ="0.2 -0.1 -0.2" width="0.15" height="0.2"></a-image> 
+        <a-image src = "grass hotbar.png" position ="0 -0.077 -0.1" width="0.1" height="0.015"></a-image> 
         <a-cursor>
         <!-- This is just a timer for now bc we cant put colons as a variable  -->
              <a-text id="timeText" position="-3.5 1.5 -1" value="Time: " color="blue"></a-text>
+              <a-text id = "CollectedText" position = "-3.5 1.2 -1" value = "Collected Blocks Counter: " color = "blue"></a-text>
 
         </a-cursor>
       </a-camera>
