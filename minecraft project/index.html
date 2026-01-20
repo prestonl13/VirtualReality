@@ -20,23 +20,57 @@
   
     <a-entity id="cameraRig" position="0 2.0 0">
       <a-camera id="camera" kinema-body="radius: 0.7" look-controls="pointerLockEnabled: true">
+        
         <a-image src = "chamoy pickle.png" position ="0.2 -0.1 -0.2" width="0.15" height="0.2"></a-image> 
         <a-image id = "emptyHotbar" src = "Inventory/hotbar.png" position ="0 -0.077 -0.1" width="0.09" height="0.015"></a-image>
         <a-image id = "grassblock" src = "grassblock/grassblock.webp" position ="-0.0383 -0.079 -0.1" width="0.0085" height="0.0085"></a-image> 
 
-        <a-image id = "fullheart1" src = "health and food/heart.png" position ="-0.045 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart2" src = "health and food/heart.png" position ="-0.04 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart3" src = "health and food/heart.png" position ="-0.035 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart4" src = "health and food/heart.png" position ="-0.03 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart5" src = "health and food/heart.png" position ="-0.025 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart6" src = "health and food/heart.png" position ="-0.02 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart7" src = "health and food/heart.png" position ="-0.015 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart8" src = "health and food/heart.png" position ="-0.01 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart9" src = "health and food/heart.png" position ="-0.005 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
-        <a-image id = "fullheart10" src = "health and food/heart.png" position ="0 -0.068 -0.1" width="0.0038" height="0.0045"></a-image>
+        <a-image id = "fullheart1" src = "health and food/heart.png" position ="-0.046 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart2" src = "health and food/heart.png" position ="-0.042 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart3" src = "health and food/heart.png" position ="-0.038 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart4" src = "health and food/heart.png" position ="-0.034 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart5" src = "health and food/heart.png" position ="-0.030 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart6" src = "health and food/heart.png" position ="-0.026 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart7" src = "health and food/heart.png" position ="-0.022 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart8" src = "health and food/heart.png" position ="-0.018 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart9" src = "health and food/heart.png" position ="-0.014 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
+        <a-image id = "fullheart10" src = "health and food/heart.png" position ="-0.01 -0.068 -0.1" width="0.0033" height="0.004" visible = "true"></a-image>
 
 
-        <a-image id = "halfheart" src = "health and food/blackheart.png" position ="0.13 0.03 -0.1" width="0.005" height="0.005"></a-image>
+        <a-image id = "blackheart1" src = "health and food/blackheart.png" position ="-0.046 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart2" src = "health and food/blackheart.png" position ="-0.042 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart3" src = "health and food/blackheart.png" position ="-0.038 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart4" src = "health and food/blackheart.png" position ="-0.034 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart5" src = "health and food/blackheart.png" position ="-0.030 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart6" src = "health and food/blackheart.png" position ="-0.026 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart7" src = "health and food/blackheart.png" position ="-0.022 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart8" src = "health and food/blackheart.png" position ="-0.018 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart9" src = "health and food/blackheart.png" position ="-0.014 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+        <a-image id = "blackheart10" src = "health and food/blackheart.png" position ="-0.01 -0.068 -0.1" width="0.0033" height="0.004" visible = "false"></a-image>
+
+
+        <a-image id = "fullhunger1" src = "health and food/hunger.png" position = "0.008 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger2" src = "health and food/hunger.png" position = "0.012 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger3" src = "health and food/hunger.png" position = "0.016 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger4" src = "health and food/hunger.png" position = "0.020 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger5" src = "health and food/hunger.png" position = "0.024 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger6" src = "health and food/hunger.png" position = "0.028 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger7" src = "health and food/hunger.png" position = "0.032 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger8" src = "health and food/hunger.png" position = "0.036 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger9" src = "health and food/hunger.png" position = "0.040 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+        <a-image id = "fullhunger10" src = "health and food/hunger.png" position = "0.044 -0.068 -0.1" width = "0.0033" height = "0.004" visible = "true"></a-image>
+
+
+        <a-image id = "nohunger1" src = "health and food/nofood.png" position = "0.008 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger2" src = "health and food/nofood.png" position = "0.012 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger3" src = "health and food/nofood.png" position = "0.016 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger4" src = "health and food/nofood.png" position = "0.020 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger5" src = "health and food/nofood.png" position = "0.024 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger6" src = "health and food/nofood.png" position = "0.028 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger7" src = "health and food/nofood.png" position = "0.032 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger8" src = "health and food/nofood.png" position = "0.036 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger9" src = "health and food/nofood.png" position = "0.040 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
+        <a-image id = "nohunger10" src = "health and food/nofood.png" position = "0.044 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
         <a-cursor>
         <!-- This is just a timer for now bc we cant put colons as a variable  -->
              <a-text id="timeText" position="-3.5 1.5 -1" value="Time: " color="blue"></a-text>
