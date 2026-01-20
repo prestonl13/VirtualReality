@@ -1,4 +1,4 @@
-class Block{
+class OakLog{
   constructor(x,y,z){
     this.x = x;
     this.y = y;
@@ -25,7 +25,7 @@ class Block{
     let top = document.createElement("a-plane");
     top.setAttribute("width","1.001");
     top.setAttribute("height","1.001");
-    top.setAttribute("src", "grassblock/top.png")
+    top.setAttribute("src", "oak log/oak top.jpg")
     top.setAttribute("side","double");
     top.setAttribute("rotation","-90 0 0");
     top.setAttribute("position","0 0.501 0");
@@ -36,7 +36,7 @@ class Block{
     right.setAttribute("width","1.001");
     right.setAttribute("height","1.001");
     right.setAttribute("side","double");
-    right.setAttribute("src", "grassblock/side.jpg");
+    right.setAttribute("src", "oak log/oak side.png");
     right.setAttribute("rotation","0 90 0");
     right.setAttribute("position","0.501 0 0");
     this.obj.append(right);
@@ -46,7 +46,7 @@ class Block{
     left.setAttribute("width","1.001");
     left.setAttribute("height","1.001");
     left.setAttribute("side","double");
-    left.setAttribute("src", "grassblock/side.jpg");
+    left.setAttribute("src", "oak log/oak side.png");
     left.setAttribute("rotation","0 -90 0");
     left.setAttribute("position","-0.501 0 0");
     this.obj.append(left);
@@ -56,7 +56,7 @@ class Block{
     front.setAttribute("width","1.001");
     front.setAttribute("height","1.001");
     front.setAttribute("side","double");
-    front.setAttribute("src", "grassblock/side.jpg");
+    front.setAttribute("src", "oak log/oak side.png");
     front.setAttribute("rotation","0 0 0");
     front.setAttribute("position","0 0 0.501");
     this.obj.append(front);
@@ -65,7 +65,7 @@ class Block{
     let back = document.createElement("a-plane");
     back.setAttribute("width","1.001");
     back.setAttribute("height","1.001");
-    back.setAttribute("src", "grassblock/side.jpg");
+    back.setAttribute("src", "oak log/oak side.png");
     back.setAttribute("side","double");
     back.setAttribute("rotation","0 180 0");
     back.setAttribute("position","0 0 -0.501");
@@ -76,7 +76,7 @@ class Block{
     bottom.setAttribute("width","1.001");
     bottom.setAttribute("height","1.001");
     bottom.setAttribute("side","double");
-    bottom.setAttribute("src", "grassblock/bottom.webp");
+    bottom.setAttribute("src", "oak log/oak top.jpg");
     bottom.setAttribute("rotation","90 0 0");
     bottom.setAttribute("position","0 -0.501 0");
     this.obj.append(bottom);
@@ -175,7 +175,7 @@ class Block{
     this.obj.addEventListener('mousedown', () => {
       if (window.collectedCount > 0){
       console.log('Block clicked at', this.x, this.y, this.z);
-      new Block(this.x, this.y + 1, this.z);
+      new OakLog(this.x, this.y + 1, this.z);
       window.collectedCount--;
       if (window.collectedCount <= 0) {
         window.grassBlockImg.setAttribute("visible", "false");
@@ -234,7 +234,7 @@ class Block{
         console.log("Block broken at:", this.x, this.y, this.z); 
         scene.removeChild(this.obj);
 
-        let newBlock = new Block(this.x, this.y + 0.5, this.z);
+        let newBlock = new OakLog(this.x, this.y + 0.5, this.z);
         newBlock.obj.setAttribute("scale", "0.3 0.3 0.3");
         newBlock.obj.setAttribute("dynamic-body", "shape: box; friction: 0.8; restitution: 0.3; mass: 5;");
         newBlock.obj.setAttribute("velocity", "0 0 0");

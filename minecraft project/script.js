@@ -1,7 +1,7 @@
 let rnd = (l,u) => Math.random()*(u-l)+l;
 let scene;
 let t = 10000;
-let collectedCount = 0;
+window.collectedCount = 0;
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("#cameraRig");
@@ -11,6 +11,11 @@ window.addEventListener("DOMContentLoaded",function() {
   window.droppedBlocks = window.droppedBlocks || [];
   // 25x25
   timeText = document.querySelector("#timeText");
+  hotBarImg = document.querySelector("#emptyHotbar");
+  window.grassBlockImg = document.querySelector("#grassblock");
+  window.grassBlockImg.setAttribute("visible", "false");
+
+  //platform
   const platformSize = 25;
   const half = Math.floor(platformSize / 2);
   for (let i = -half; i <= half; i++) {
@@ -21,6 +26,9 @@ window.addEventListener("DOMContentLoaded",function() {
       new Block(x, y, z);
     }
   }
+
+  //trees
+  let tree = new Tree(3, 1.5, -4);
 
 // collecting
 
@@ -33,12 +41,16 @@ setInterval(() => {
     } else {
       let d = distance(playerCamera, b.obj);
 
-      if (d < 1) {
+      if (d < 1.5) {
         scene.removeChild(b.obj);
-        collectedCount++; 
-        console.log("Collected:", collectedCount);
+        window.collectedCount++; 
+        console.log("Collected:", window.collectedCount);
+        window.grassBlockImg.setAttribute("visible", "true");
       } else {
         newList.push(b);
+      }
+      if(window.collectedCount < 0){
+        window.grassBlockImg.setAttribute("visible", "false");
       }
     }
   }
@@ -64,7 +76,7 @@ window.addEventListener("keydown", (e) => {
     isJumping = true;
     camera.removeAttribute("animation");
     setTimeout(() => {
-      camera.setAttribute("animation", {property: "position",to: "0 3 0",dur: 300,dir: "alternate",loop: 1,easing: "easeInOutQuad"
+      camera.setAttribute("animation", {property: "position",to: "0 4 0",dur: 300,dir: "alternate",loop: 1,easing: "easeInOutQuad"
       });
     }, 0);
     setTimeout(() => {
@@ -84,7 +96,7 @@ function countdown(){
 }
 
 function loop(){
-  collectedTxt.setAttribute("value", `Collected Blocks: ${collectedCount}`)
+  collectedTxt.setAttribute("value", `Collected Blocks: ${window.collectedCount}`)
 
    window.requestAnimationFrame(loop);
 }

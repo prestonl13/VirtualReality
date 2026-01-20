@@ -7,6 +7,8 @@
     <script src="script.js"></script>
     <script src="kinema.js"></script>
     <script src="tree.js"></script>
+    <script src="oaklog.js"></script>
+    <script src="oakleaves.js"></script>
   </head>
   <body>
   
@@ -16,10 +18,25 @@
   <a-plane static-body="friction: 0.8; restitution: 0;" color="green" rotation="-90 0 0" side="double" width="50" height="50" opacity="0.5"></a-plane>
   <a-sky src="skies/sunset.jpg" rotation="0 -90 0" side="double"></a-sky>
   
-    <a-entity id="cameraRig" position="0 1.6 0">
-      <a-camera id="camera" kinema-body="radius: 0.8" look-controls="pointerLockEnabled: true">
+    <a-entity id="cameraRig" position="0 2.0 0">
+      <a-camera id="camera" kinema-body="radius: 0.7" look-controls="pointerLockEnabled: true">
         <a-image src = "chamoy pickle.png" position ="0.2 -0.1 -0.2" width="0.15" height="0.2"></a-image> 
-        <a-image src = "grass hotbar.png" position ="0 -0.077 -0.1" width="0.1" height="0.015"></a-image> 
+        <a-image id = "emptyHotbar" src = "Inventory/hotbar.png" position ="0 -0.077 -0.1" width="0.09" height="0.015"></a-image>
+        <a-image id = "grassblock" src = "grassblock/grassblock.webp" position ="-0.0383 -0.079 -0.1" width="0.0085" height="0.0085"></a-image> 
+
+        <a-image id = "fullheart1" src = "health and food/heart.png" position ="-0.045 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart2" src = "health and food/heart.png" position ="-0.04 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart3" src = "health and food/heart.png" position ="-0.035 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart4" src = "health and food/heart.png" position ="-0.03 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart5" src = "health and food/heart.png" position ="-0.025 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart6" src = "health and food/heart.png" position ="-0.02 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart7" src = "health and food/heart.png" position ="-0.015 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart8" src = "health and food/heart.png" position ="-0.01 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart9" src = "health and food/heart.png" position ="-0.005 -0.068 -0.1" width="0.004" height="0.0045"></a-image>
+        <a-image id = "fullheart10" src = "health and food/heart.png" position ="0 -0.068 -0.1" width="0.0038" height="0.0045"></a-image>
+
+
+        <a-image id = "halfheart" src = "health and food/blackheart.png" position ="0.13 0.03 -0.1" width="0.005" height="0.005"></a-image>
         <a-cursor>
         <!-- This is just a timer for now bc we cant put colons as a variable  -->
              <a-text id="timeText" position="-3.5 1.5 -1" value="Time: " color="blue"></a-text>
