@@ -12,11 +12,77 @@ class Tree {
     
     
     this.foliage1 = new OakLeaves(x, y + 6, z);
-    this.foliage2 = new OakLeaves(x + 1, y + 7, z);
-    this.foliage3 = new OakLeaves(x - 1, y + 7, z);
-    this.foliage4 = new OakLeaves(x, y + 4, z + 1);
-    this.foliage5 = new OakLeaves(x, y + 4, z - 1);
+    this.foliage2 = new OakLeaves(x + 1, y + 6, z);
+    this.foliage3 = new OakLeaves(x - 1, y + 6, z);
+    this.foliage4 = new OakLeaves(x, y + 6, z + 1);
+    this.foliage5 = new OakLeaves(x, y + 6, z - 1);
+    
+    this.foliage6 = new OakLeaves(x + 1, y + 5, z);
+    this.foliage7 = new OakLeaves(x - 1, y + 5, z);
+    this.foliage8 = new OakLeaves(x, y + 5, z + 1);
+    this.foliage9 = new OakLeaves(x, y + 5, z - 1);
 
+    this.foliage6 = new OakLeaves(x + 1, y + 4, z);
+    this.foliage7 = new OakLeaves(x - 1, y + 4, z);
+    this.foliage8 = new OakLeaves(x, y + 4, z + 1);
+    this.foliage9 = new OakLeaves(x, y + 4, z - 1);
+
+    this.foliage10 = new OakLeaves(x + 2, y + 4, z);
+    this.foliage11 = new OakLeaves(x - 2, y + 4, z);
+    this.foliage12 = new OakLeaves(x, y + 4, z + 2);
+    this.foliage13 = new OakLeaves(x, y + 4, z - 2);
+
+    this.foliage10 = new OakLeaves(x + 1, y + 4, z - 1);
+    this.foliage11 = new OakLeaves(x + 1, y + 4, z + 1);
+    this.foliage12 = new OakLeaves(x - 1, y + 4, z - 1);
+    this.foliage13 = new OakLeaves(x - 1, y + 4, z + 1);
+
+    this.foliage10 = new OakLeaves(x + 2, y + 4, z - 1);
+    this.foliage11 = new OakLeaves(x + 2, y + 4, z + 1);
+    this.foliage12 = new OakLeaves(x - 2, y + 4, z - 1);
+    this.foliage13 = new OakLeaves(x - 2, y + 4, z + 1);
+
+    this.foliage10 = new OakLeaves(x + 2, y + 4, z - 2);
+    this.foliage11 = new OakLeaves(x + 2, y + 4, z + 2);
+    this.foliage12 = new OakLeaves(x - 2, y + 4, z - 2);
+    this.foliage13 = new OakLeaves(x - 2, y + 4, z + 2);
+
+    this.foliage10 = new OakLeaves(x + 1, y + 4, z - 2);
+    this.foliage11 = new OakLeaves(x + 1, y + 4, z + 2);
+    this.foliage12 = new OakLeaves(x - 1, y + 4, z - 2);
+    this.foliage13 = new OakLeaves(x - 1, y + 4, z + 2);
+
+    //last row
+    this.foliage10 = new OakLeaves(x + 1, y + 3, z - 1);
+    this.foliage11 = new OakLeaves(x + 1, y + 3, z + 1);
+    this.foliage12 = new OakLeaves(x - 1, y + 3, z - 1);
+    this.foliage13 = new OakLeaves(x - 1, y + 3, z + 1);
+
+    this.foliage10 = new OakLeaves(x + 2, y + 3, z - 1);
+    this.foliage11 = new OakLeaves(x + 2, y + 3, z + 1);
+    this.foliage12 = new OakLeaves(x - 2, y + 3, z - 1);
+    this.foliage13 = new OakLeaves(x - 2, y + 3, z + 1);
+
+    this.foliage10 = new OakLeaves(x + 2, y + 3, z - 2);
+    this.foliage11 = new OakLeaves(x + 2, y + 3, z + 2);
+    this.foliage12 = new OakLeaves(x - 2, y + 3, z - 2);
+    this.foliage13 = new OakLeaves(x - 2, y + 3, z + 2);
+
+    this.foliage10 = new OakLeaves(x + 1, y + 3, z - 2);
+    this.foliage11 = new OakLeaves(x + 1, y + 3, z + 2);
+    this.foliage12 = new OakLeaves(x - 1, y + 3, z - 2);
+    this.foliage13 = new OakLeaves(x - 1, y + 3, z + 2);
+
+    this.foliage10 = new OakLeaves(x + 1, y + 3, z);
+    this.foliage11 = new OakLeaves(x + 2, y + 3, z);
+    this.foliage12 = new OakLeaves(x - 1, y + 3, z);
+    this.foliage13 = new OakLeaves(x - 2, y + 3, z);
+
+    this.foliage10 = new OakLeaves(x, y + 3, z + 1);
+    this.foliage11 = new OakLeaves(x, y + 3, z + 2);
+    this.foliage12 = new OakLeaves(x, y + 3, z - 1);
+    this.foliage13 = new OakLeaves(x, y + 3, z - 2);
+    
     this.obj.setAttribute("static-body", "");
     this.obj.setAttribute("position", { x: x, y: y, z: z });
     scene.append(this.obj);

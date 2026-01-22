@@ -28,7 +28,7 @@ class OakLog{
     top.setAttribute("src", "oak log/oak top.jpg")
     top.setAttribute("side","double");
     top.setAttribute("rotation","-90 0 0");
-    top.setAttribute("position","0 0.501 0");
+    top.setAttribute("position","0 0.505 0");
     this.obj.append(top);
 
     // Right face (+X)
@@ -38,7 +38,7 @@ class OakLog{
     right.setAttribute("side","double");
     right.setAttribute("src", "oak log/oak side.png");
     right.setAttribute("rotation","0 90 0");
-    right.setAttribute("position","0.501 0 0");
+    right.setAttribute("position","0.505 0 0");
     this.obj.append(right);
 
     // Left face (-X)
@@ -48,7 +48,7 @@ class OakLog{
     left.setAttribute("side","double");
     left.setAttribute("src", "oak log/oak side.png");
     left.setAttribute("rotation","0 -90 0");
-    left.setAttribute("position","-0.501 0 0");
+    left.setAttribute("position","-0.505 0 0");
     this.obj.append(left);
 
     // Front face (+Z)
@@ -58,7 +58,7 @@ class OakLog{
     front.setAttribute("side","double");
     front.setAttribute("src", "oak log/oak side.png");
     front.setAttribute("rotation","0 0 0");
-    front.setAttribute("position","0 0 0.501");
+    front.setAttribute("position","0 0 0.505");
     this.obj.append(front);
 
     // Back face (-Z)
@@ -68,7 +68,7 @@ class OakLog{
     back.setAttribute("src", "oak log/oak side.png");
     back.setAttribute("side","double");
     back.setAttribute("rotation","0 180 0");
-    back.setAttribute("position","0 0 -0.501");
+    back.setAttribute("position","0 0 -0.505");
     this.obj.append(back);
 
     // Bottom face
@@ -78,7 +78,7 @@ class OakLog{
     bottom.setAttribute("side","double");
     bottom.setAttribute("src", "oak log/oak top.jpg");
     bottom.setAttribute("rotation","90 0 0");
-    bottom.setAttribute("position","0 -0.501 0");
+    bottom.setAttribute("position","0 -0.505 0");
     this.obj.append(bottom);
 
     let frame = document.createElement("a-box");
@@ -97,7 +97,7 @@ class OakLog{
     topBreak.setAttribute("side","double");
     topBreak.setAttribute("opacity","0");
     topBreak.setAttribute("rotation","-90 0 0");
-    topBreak.setAttribute("position","0 0.501 0");
+    topBreak.setAttribute("position","0 0.505 0");
     this.obj.append(topBreak);
 
     // Right face (+X)
@@ -108,7 +108,7 @@ class OakLog{
     rightBreak.setAttribute("opacity","0");
     rightBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     rightBreak.setAttribute("rotation","0 90 0");
-    rightBreak.setAttribute("position","0.501 0 0");
+    rightBreak.setAttribute("position","0.505 0 0");
     this.obj.append(rightBreak);
 
     // Left face (-X)
@@ -119,7 +119,7 @@ class OakLog{
     leftBreak.setAttribute("opacity","0");
     leftBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     leftBreak.setAttribute("rotation","0 -90 0");
-    leftBreak.setAttribute("position","-0.501 0 0");
+    leftBreak.setAttribute("position","-0.505 0 0");
     this.obj.append(leftBreak);
 
     // Front face (+Z)
@@ -130,7 +130,7 @@ class OakLog{
     frontBreak.setAttribute("opacity","0");
     frontBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     frontBreak.setAttribute("rotation","0 0 0");
-    frontBreak.setAttribute("position","0 0 0.501");
+    frontBreak.setAttribute("position","0 0 0.505");
     this.obj.append(frontBreak);
 
     // Back face (-Z)
@@ -141,7 +141,7 @@ class OakLog{
     backBreak.setAttribute("opacity","0");
     backBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     backBreak.setAttribute("rotation","0 180 0");
-    backBreak.setAttribute("position","0 0 -0.501");
+    backBreak.setAttribute("position","0 0 -0.505");
     this.obj.append(backBreak);
 
     // Bottom face
@@ -152,7 +152,7 @@ class OakLog{
     bottomBreak.setAttribute("side","double");
     bottomBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     bottomBreak.setAttribute("rotation","90 0 0");
-    bottomBreak.setAttribute("position","0 -0.501 0");
+    bottomBreak.setAttribute("position","0 -0.505 0");
     this.obj.append(bottomBreak);
 
 

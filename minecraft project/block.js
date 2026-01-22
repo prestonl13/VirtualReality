@@ -19,66 +19,67 @@ class Block{
     box.setAttribute("width","1");
     box.setAttribute("height","1");
     box.setAttribute("depth","1");
+    box.setAttribute("material", "opacity: 0; depthWrite: false;");
     this.obj.append(box);
 
 
     let top = document.createElement("a-plane");
-    top.setAttribute("width","1.001");
-    top.setAttribute("height","1.001");
+    top.setAttribute("width","1");
+    top.setAttribute("height","1");
     top.setAttribute("src", "grassblock/top.png")
     top.setAttribute("side","double");
     top.setAttribute("rotation","-90 0 0");
-    top.setAttribute("position","0 0.501 0");
+    top.setAttribute("position","0 0.505 0");
     this.obj.append(top);
 
     // Right face (+X)
     let right = document.createElement("a-plane");
-    right.setAttribute("width","1.001");
-    right.setAttribute("height","1.001");
+    right.setAttribute("width","1");
+    right.setAttribute("height","1");
     right.setAttribute("side","double");
     right.setAttribute("src", "grassblock/side.jpg");
     right.setAttribute("rotation","0 90 0");
-    right.setAttribute("position","0.501 0 0");
+    right.setAttribute("position","0.505 0 0");
     this.obj.append(right);
 
     // Left face (-X)
     let left = document.createElement("a-plane");
-    left.setAttribute("width","1.001");
-    left.setAttribute("height","1.001");
+    left.setAttribute("width","1");
+    left.setAttribute("height","1");
     left.setAttribute("side","double");
     left.setAttribute("src", "grassblock/side.jpg");
     left.setAttribute("rotation","0 -90 0");
-    left.setAttribute("position","-0.501 0 0");
+    left.setAttribute("position","-0.505 0 0");
     this.obj.append(left);
 
     // Front face (+Z)
     let front = document.createElement("a-plane");
-    front.setAttribute("width","1.001");
-    front.setAttribute("height","1.001");
+    front.setAttribute("width","1");
+    front.setAttribute("height","1");
     front.setAttribute("side","double");
     front.setAttribute("src", "grassblock/side.jpg");
     front.setAttribute("rotation","0 0 0");
-    front.setAttribute("position","0 0 0.501");
+    front.setAttribute("position","0 0 0.505");
     this.obj.append(front);
 
     // Back face (-Z)
     let back = document.createElement("a-plane");
-    back.setAttribute("width","1.001");
-    back.setAttribute("height","1.001");
+    back.setAttribute("width","1");
+    back.setAttribute("height","1");
     back.setAttribute("src", "grassblock/side.jpg");
     back.setAttribute("side","double");
     back.setAttribute("rotation","0 180 0");
-    back.setAttribute("position","0 0 -0.501");
+    back.setAttribute("position","0 0 -0.505");
     this.obj.append(back);
 
     // Bottom face
     let bottom = document.createElement("a-plane");
-    bottom.setAttribute("width","1.001");
-    bottom.setAttribute("height","1.001");
+    bottom.setAttribute("width","1");
+    bottom.setAttribute("height","1");
     bottom.setAttribute("side","double");
     bottom.setAttribute("src", "grassblock/bottom.webp");
     bottom.setAttribute("rotation","90 0 0");
-    bottom.setAttribute("position","0 -0.501 0");
+    bottom.setAttribute("position","0 -0.505 0");
     this.obj.append(bottom);
 
     let frame = document.createElement("a-box");
@@ -97,7 +98,7 @@ class Block{
     topBreak.setAttribute("side","double");
     topBreak.setAttribute("opacity","0");
     topBreak.setAttribute("rotation","-90 0 0");
-    topBreak.setAttribute("position","0 0.501 0");
+    topBreak.setAttribute("position","0 0.507 0");
     this.obj.append(topBreak);
 
     // Right face (+X)
@@ -108,7 +109,7 @@ class Block{
     rightBreak.setAttribute("opacity","0");
     rightBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     rightBreak.setAttribute("rotation","0 90 0");
-    rightBreak.setAttribute("position","0.501 0 0");
+    rightBreak.setAttribute("position","0.507 0 0");
     this.obj.append(rightBreak);
 
     // Left face (-X)
@@ -119,7 +120,7 @@ class Block{
     leftBreak.setAttribute("opacity","0");
     leftBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     leftBreak.setAttribute("rotation","0 -90 0");
-    leftBreak.setAttribute("position","-0.501 0 0");
+    leftBreak.setAttribute("position","-0.507 0 0");
     this.obj.append(leftBreak);
 
     // Front face (+Z)
@@ -130,7 +131,7 @@ class Block{
     frontBreak.setAttribute("opacity","0");
     frontBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     frontBreak.setAttribute("rotation","0 0 0");
-    frontBreak.setAttribute("position","0 0 0.501");
+    frontBreak.setAttribute("position","0 0 0.507");
     this.obj.append(frontBreak);
 
     // Back face (-Z)
@@ -141,7 +142,7 @@ class Block{
     backBreak.setAttribute("opacity","0");
     backBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     backBreak.setAttribute("rotation","0 180 0");
-    backBreak.setAttribute("position","0 0 -0.501");
+    backBreak.setAttribute("position","0 0 -0.507");
     this.obj.append(backBreak);
 
     // Bottom face
@@ -152,7 +153,7 @@ class Block{
     bottomBreak.setAttribute("side","double");
     bottomBreak.setAttribute("src", "breaking textures/destroy_stage_1.png");
     bottomBreak.setAttribute("rotation","90 0 0");
-    bottomBreak.setAttribute("position","0 -0.501 0");
+    bottomBreak.setAttribute("position","0 -0.507 0");
     this.obj.append(bottomBreak);
 
 
