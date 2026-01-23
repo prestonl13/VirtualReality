@@ -172,15 +172,15 @@ class OakLog{
 
                                                                                 // placing blocks
 
-    this.obj.addEventListener('mousedown', () => {
-      if (window.collectedCount > 0){
-      console.log('Block clicked at', this.x, this.y, this.z);
-      new OakLog(this.x, this.y + 1, this.z);
-      window.collectedCount--;
-      if (window.collectedCount <= 0) {
-        window.grassBlockImg.setAttribute("visible", "false");
-      }
-      }});
+  this.obj.addEventListener("mousedown", () => {
+    if (window.selectedBlock !== "oakLog") return;
+
+    if (window.inventory.oakLog > 0) {
+    new OakLog(this.x, this.y + 1, this.z);
+    window.inventory.oakLog--;
+  }
+  });
+
   
 
 
@@ -243,8 +243,9 @@ class OakLog{
         
         window.droppedBlocks = window.droppedBlocks || [];
         window.droppedBlocks.push({
-          obj: newBlock.obj
-        });
+        obj: newBlock.obj,
+        type: "oakLog"
+      });
 
       } 
   }

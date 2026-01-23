@@ -2,7 +2,16 @@ let rnd = (l,u) => Math.random()*(u-l)+l;
 let scene;
 let t = 10000;
 let trees = [];
-window.collectedCount = 0;
+//window.collectedCount = 0;
+
+window.inventory = {
+  dirt: 0,
+  oakLeaves: 0,
+  oakLog: 0
+};
+
+window.selectedBlock = "dirt";
+
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("#cameraRig");
@@ -78,7 +87,7 @@ window.addEventListener("DOMContentLoaded",function() {
   timeText = document.querySelector("#timeText");
   hotBarImg = document.querySelector("#emptyHotbar");
   window.grassBlockImg = document.querySelector("#grassblock");
-  window.grassBlockImg.setAttribute("visible", "false");
+  //window.grassBlockImg.setAttribute("visible", false);
 
 
 
@@ -95,30 +104,55 @@ window.addEventListener("DOMContentLoaded",function() {
   }
 
 // collecting
+//setInterval(() => {
+  //if (!window.droppedBlocks) return;
+  //let newList = [];
+  //for (let i = 0; i < window.droppedBlocks.length; i++) {
+    //let b = window.droppedBlocks[i];
+    //if (!b.obj) { 
+    //} else {
+      //let d = distance(playerCamera, b.obj);
+
+      //if (d < 1.5) {
+        //scene.removeChild(b.obj);
+        //window.collectedCount++; 
+        //console.log("Collected:", window.collectedCount);
+        //window.grassBlockImg.setAttribute("visible", "true");
+      //} else {
+        //newList.push(b);
+      //}
+      //if(window.collectedCount < 0){
+        //window.grassBlockImg.setAttribute("visible", "false");
+      //}
+    //}
+  //}
+  //window.droppedBlocks = newList;
+//}, 200);
+
+
 setInterval(() => {
   if (!window.droppedBlocks) return;
+
   let newList = [];
+
   for (let i = 0; i < window.droppedBlocks.length; i++) {
     let b = window.droppedBlocks[i];
-    if (!b.obj) { 
-    } else {
-      let d = distance(playerCamera, b.obj);
+    if (!b.obj) continue;
 
-      if (d < 1.5) {
-        scene.removeChild(b.obj);
-        window.collectedCount++; 
-        console.log("Collected:", window.collectedCount);
-        window.grassBlockImg.setAttribute("visible", "true");
-      } else {
-        newList.push(b);
-      }
-      if(window.collectedCount < 0){
-        window.grassBlockImg.setAttribute("visible", "false");
-      }
+    let d = distance(playerCamera, b.obj);
+
+    if (d < 1.5) {
+      scene.removeChild(b.obj);
+      window.inventory[b.type]++;
+      console.log(`Collected ${b.type}:`, window.inventory[b.type]);
+    } else {
+      newList.push(b);
     }
   }
+
   window.droppedBlocks = newList;
 }, 200);
+
 
   
 
@@ -127,17 +161,20 @@ setInterval(() => {
   hotbar = document.querySelector("#emptyHotbar");
   window.addEventListener("keydown", (e) => { 
     if (e.key === "1") { 
-      hotbar.setAttribute("src", "inventory/hotbar.png"); 
+      hotbar.setAttribute("src", "inventory/hotbar.png");
+      window.selectedBlock = "dirt";
     }
   });
   window.addEventListener("keydown", (e) => { 
     if (e.key === "2") { 
       hotbar.setAttribute("src", "inventory/hotbar 2.png"); 
+      window.selectedBlock = "oakLog";
     }
   });
   window.addEventListener("keydown", (e) => { 
     if (e.key === "3") { 
       hotbar.setAttribute("src", "inventory/hotbar 3.png"); 
+      window.selectedBlock = "oakLeaves";
     }
   });
   window.addEventListener("keydown", (e) => { 
@@ -247,7 +284,7 @@ function countdown(){
 }
 
 function loop(){
-  collectedTxt.setAttribute("value", `Collected Blocks: ${window.collectedCount}`)
+  collectedTxt.setAttribute("value", `Dirt: ${inventory.dirt} | Logs: ${inventory.oakLog} | Leaves: ${inventory.oakLeaves}`);
 
    window.requestAnimationFrame(loop);
 }

@@ -172,15 +172,15 @@ class OakLeaves{
 
                                                                                 // placing blocks
 
-    this.obj.addEventListener('mousedown', () => {
-      if (window.collectedCount > 0){
-      console.log('Block clicked at', this.x, this.y, this.z);
-      new OakLeaves(this.x, this.y + 1, this.z);
-      window.collectedCount--;
-      if (window.collectedCount <= 0) {
-        window.grassBlockImg.setAttribute("visible", "false");
-      }
-      }});
+    this.obj.addEventListener("mousedown", () => {
+  if (window.selectedBlock !== "oakLeaves") return;
+
+  if (window.inventory.oakLeaves > 0) {
+    new OakLeaves(this.x, this.y + 1, this.z);
+    window.inventory.oakLeaves--;
+  }
+  });
+
   
 
 
@@ -230,7 +230,7 @@ class OakLeaves{
         this.breakfront.setAttribute("src", "breaking textures/destroy_stage_5.png");
         this.breakback.setAttribute("src", "breaking textures/destroy_stage_5.png");
       }
-      if (this.hitCount >= 4){ 
+      if (this.hitCount >= 4){
         console.log("Block broken at:", this.x, this.y, this.z); 
         scene.removeChild(this.obj);
 
@@ -243,8 +243,10 @@ class OakLeaves{
         
         window.droppedBlocks = window.droppedBlocks || [];
         window.droppedBlocks.push({
-          obj: newBlock.obj
+        obj: newBlock.obj,
+        type: "oakLeaves"
         });
+
 
       } 
   }

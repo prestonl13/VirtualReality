@@ -8,6 +8,13 @@ class Block{
     this.dz = 0.5;
     this.breakable = true;
     this.camera = document.querySelector("#cameraRig");
+
+
+
+    window.inventory = window.inventory || {dirt: 0, oakLog: 0, oakLeaves:0};
+
+
+    
     this.obj = document.createElement("a-entity");
     this.obj.setAttribute("static-body", "shape: box; friction: 1.0; restitution: 0;");
     //this.obj.setAttribute("static-body", " ");
@@ -173,15 +180,19 @@ class Block{
 
                                                                                 // placing blocks
 
-    this.obj.addEventListener('mousedown', () => {
-      if (window.collectedCount > 0){
-      console.log('Block clicked at', this.x, this.y, this.z);
-      new Block(this.x, this.y + 1, this.z);
-      window.collectedCount--;
-      if (window.collectedCount <= 0) {
-        window.grassBlockImg.setAttribute("visible", "false");
-      }
-      }});
+  this.obj.addEventListener("mousedown", () => {
+  if (window.selectedBlock !== "dirt") return;
+
+  if (window.inventory.dirt > 0) {
+    console.log("Placed dirt at", this.x, this.y + 1, this.z);
+    new Block(this.x, this.y + 1, this.z);
+    window.grassBlockImg.setAttribute("visible", true);
+    window.inventory.dirt--;
+  }
+  if (window.inventory.dirt <= 0) {
+    window.grassBlockImg.setAttribute("visible", false);
+  }
+});
   
 
 
@@ -244,7 +255,8 @@ class Block{
         
         window.droppedBlocks = window.droppedBlocks || [];
         window.droppedBlocks.push({
-          obj: newBlock.obj
+        obj: newBlock.obj,
+        type: "dirt"
         });
 
       } 
