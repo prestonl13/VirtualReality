@@ -216,6 +216,33 @@ setInterval(() => {
   });
 
 
+
+  // placing blocks globally
+window.addEventListener("mousedown", () => {
+  if (!window.currentBlock) return;
+
+  let x = window.currentBlock.x;
+  let y = window.currentBlock.y;
+  let z = window.currentBlock.z;
+
+  if (window.selectedBlock === "dirt" && inventory.dirt > 0) {
+    new Block(x, y + 1, z);
+    inventory.dirt--;
+  }
+
+  if (window.selectedBlock === "oakLog" && inventory.oakLog > 0) {
+    new OakLog(x, y + 1, z);
+    inventory.oakLog--;
+  }
+
+  if (window.selectedBlock === "oakLeaves" && inventory.oakLeaves > 0) {
+    new OakLeaves(x, y + 1, z);
+    inventory.oakLeaves--;
+  }
+});
+
+
+
   //jumping
 
   let isJumping = false;
@@ -285,6 +312,24 @@ function countdown(){
 
 function loop(){
   collectedTxt.setAttribute("value", `Dirt: ${inventory.dirt} | Logs: ${inventory.oakLog} | Leaves: ${inventory.oakLeaves}`);
+
+  if (inventory.dirt > 0) { 
+    window.grassBlockImg.setAttribute("visible", true); 
+  } else {
+     window.grassBlockImg.setAttribute("visible", false); 
+    }
+
+  let oakLogImg = document.querySelector("#oaklog"); 
+  if (inventory.oakLog > 0) { 
+    oakLogImg.setAttribute("visible", true); 
+  } else { 
+    oakLogImg.setAttribute("visible", false); }
+
+  let oakLeavesImg = document.querySelector("#oakleaves"); 
+  if (inventory.oakLeaves > 0) { 
+    oakLeavesImg.setAttribute("visible", true); 
+  } else { 
+    oakLeavesImg.setAttribute("visible", false); }
 
    window.requestAnimationFrame(loop);
 }

@@ -172,14 +172,14 @@ class OakLeaves{
 
                                                                                 // placing blocks
 
-    this.obj.addEventListener("mousedown", () => {
-  if (window.selectedBlock !== "oakLeaves") return;
+    //this.obj.addEventListener("mousedown", () => {
+  //if (window.selectedBlock !== "oakLeaves") return;
 
-  if (window.inventory.oakLeaves > 0) {
-    new OakLeaves(this.x, this.y + 1, this.z);
-    window.inventory.oakLeaves--;
-  }
-  });
+  //if (window.inventory.oakLeaves > 0) {
+    //new OakLeaves(this.x, this.y + 1, this.z);
+    //window.inventory.oakLeaves--;
+  //}
+  //});
 
   
 

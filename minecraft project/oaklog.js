@@ -172,14 +172,14 @@ class OakLog{
 
                                                                                 // placing blocks
 
-  this.obj.addEventListener("mousedown", () => {
-    if (window.selectedBlock !== "oakLog") return;
+  //this.obj.addEventListener("mousedown", () => {
+    //if (window.selectedBlock !== "oakLog") return;
 
-    if (window.inventory.oakLog > 0) {
-    new OakLog(this.x, this.y + 1, this.z);
-    window.inventory.oakLog--;
-  }
-  });
+    //if (window.inventory.oakLog > 0) {
+    //new OakLog(this.x, this.y + 1, this.z);
+    //window.inventory.oakLog--;
+ // }
+  //});
 
   
 

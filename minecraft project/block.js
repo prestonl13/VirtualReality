@@ -180,19 +180,16 @@ class Block{
 
                                                                                 // placing blocks
 
-  this.obj.addEventListener("mousedown", () => {
-  if (window.selectedBlock !== "dirt") return;
+  //this.obj.addEventListener("mousedown", () => {
+  //if (window.selectedBlock !== "dirt") return;
 
-  if (window.inventory.dirt > 0) {
-    console.log("Placed dirt at", this.x, this.y + 1, this.z);
-    new Block(this.x, this.y + 1, this.z);
-    window.grassBlockImg.setAttribute("visible", true);
-    window.inventory.dirt--;
-  }
-  if (window.inventory.dirt <= 0) {
-    window.grassBlockImg.setAttribute("visible", false);
-  }
-});
+  //if (window.inventory.dirt > 0) {
+    //console.log("Placed dirt at", this.x, this.y + 1, this.z);
+    //new Block(this.x, this.y + 1, this.z);
+
+    //window.inventory.dirt--;
+  //}
+//});
   
 
 
