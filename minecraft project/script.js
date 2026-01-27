@@ -286,6 +286,37 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+
+
+// crouching
+
+
+let standingY = 1.6;    
+let crouchY = 0.9;  
+
+let isCrouching = false;
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "c" && !isCrouching) {
+    isCrouching = true;
+
+
+
+    camera.removeAttribute("animation");
+    camera.setAttribute("animation", {property: "position",to: "0 " + crouchY + " 0",dur: 100,easing: "easeOutQuad"});
+  }
+});
+
+window.addEventListener("keyup", (e) => {
+  if (e.key === "c") {
+    isCrouching = false;
+
+
+    camera.removeAttribute("animation");
+    camera.setAttribute("animation", {property: "position", to: "0 " + standingY + " 0", dur: 100, easing: "easeOutQuad"});
+  }
+});
+
   setInterval(countdown, 1000);
   loop();
 });
