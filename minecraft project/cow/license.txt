@@ -1,0 +1,11 @@
+Model Information:
+* title:	Minecraft cow real
+* source:	https://sketchfab.com/3d-models/minecraft-cow-real-118c5bf3274c4afb9074015de6f18a6e
+* author:	nayavpongotra (https://sketchfab.com/nayavpongotra)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Minecraft cow real" (https://sketchfab.com/3d-models/minecraft-cow-real-118c5bf3274c4afb9074015de6f18a6e) by nayavpongotra (https://sketchfab.com/nayavpongotra) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

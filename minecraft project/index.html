@@ -3,6 +3,7 @@
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@fb96ab2/dist/aframe-extras.min.js"></script>
     <script src="block.js"></script>
     <script src="script.js"></script>
     <script src="kinema.js"></script>
@@ -11,13 +12,21 @@
     <script src="oakleaves.js"></script>
   </head>
   <body>
+
   
   <a-scene physics="debug: false; friction: 0.8; restitution: 0.3;">
 
   <!-- Floor -->
   <a-plane static-body="friction: 0.8; restitution: 0;" color="green" rotation="-90 0 0" side="double" width="50" height="50" opacity="0.5"></a-plane>
   <a-sky src="skies/sunset.jpg" rotation="0 -90 0" side="double"></a-sky>
-  
+
+
+  <!-- Animal Models -->
+
+  <a-assets>
+    <a-asset-item id="cow" src="cow/scene.gltf"></a-asset-item>
+  </a-assets>
+    
     <a-entity id="cameraRig" position="0 1.5 0">
       <a-camera id="camera" kinema-body="radius: 0.7" look-controls="pointerLockEnabled: true">
         

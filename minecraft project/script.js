@@ -2,6 +2,9 @@ let rnd = (l,u) => Math.random()*(u-l)+l;
 let scene;
 let t = 10000;
 let trees = [];
+let cows = [];
+let dx = rnd(-0.02,0.02);
+let dz = rnd(-0.02,0.02);
 //window.collectedCount = 0;
 
 window.inventory = {
@@ -19,13 +22,26 @@ window.addEventListener("DOMContentLoaded",function() {
 
   //populate with trees
   for(let i=0;i<5;i++){
-    let x = Math.round(rnd(-20,20));
-    let z = Math.round(rnd(-20,20));
+    let x = Math.round(rnd(-15,15));
+    let z = Math.round(rnd(-15,15));
     let tree = new Tree(x, 1.5, z);
     trees.push(tree);
   }
 
+  //cows
+  for(let i = 0; i < 10; i++){
+    let x = rnd(-15,15);
+    let z = rnd(-15,15);
+    let cow = document.createElement("a-gltf-model");
+    cow.setAttribute("src","#cow");
+    cow.setAttribute("animation-mixer","");
+    cow.setAttribute("position",{x:x,y:1,z:z});
 
+    cows.push(cow);
+    scene.append(cow);
+  }
+  //cowWalk();
+  
 
   //health
 
@@ -217,30 +233,39 @@ setInterval(() => {
 
 
 
-  // placing blocks globally
+
+let placing = false;
+
+// GLOBAL BLOCK PLACEMENT
 window.addEventListener("mousedown", () => {
-  if (!window.currentBlock) return;
+  if (placing) return;         
+  placing = true;
+  setTimeout(() => placing = false, 50);   
+
+  if (!window.currentBlock) return;  
 
   let x = window.currentBlock.x;
   let y = window.currentBlock.y;
   let z = window.currentBlock.z;
 
-  if (window.selectedBlock === "dirt" && inventory.dirt > 0) {
+
+  if (window.selectedBlock === "dirt" && window.inventory.dirt > 0) {
     new Block(x, y + 1, z);
-    inventory.dirt--;
+    window.inventory.dirt--;
   }
 
-  if (window.selectedBlock === "oakLog" && inventory.oakLog > 0) {
+
+  if (window.selectedBlock === "oakLog" && window.inventory.oakLog > 0) {
     new OakLog(x, y + 1, z);
-    inventory.oakLog--;
+    window.inventory.oakLog--;
   }
 
-  if (window.selectedBlock === "oakLeaves" && inventory.oakLeaves > 0) {
+
+  if (window.selectedBlock === "oakLeaves" && window.inventory.oakLeaves > 0) {
     new OakLeaves(x, y + 1, z);
-    inventory.oakLeaves--;
+    window.inventory.oakLeaves--;
   }
 });
-
 
 
   //jumping
@@ -331,6 +356,30 @@ function loop(){
   } else { 
     oakLeavesImg.setAttribute("visible", false); }
 
+    if (camera.object3D.position.y < 0.3) { 
+      camera.object3D.position.y = 0.3; 
+    }
+  
+  //cow movement
+  for (let cow of cows){
+    cow.object3D.position.x += dx;
+    cow.object3D.position.z += dz;
+
+    if (cow.object3D.position.x > 15 || cow.object3D.position.x < -15){
+      dx = -dx;
+    }
+    if (cow.object3D.position.z > 15 || cow.object3D.position.z < -15){
+      dz = -dz;
+    }
+
+
+  }
+
+
+
+
+
+
    window.requestAnimationFrame(loop);
 }
 
@@ -345,3 +394,9 @@ function distance(obj1,obj2){
   let d = Math.sqrt(Math.pow(x1-x2,2) + Math.pow(y1-y2,2) + Math.pow(z1-z2,2));
   return d;
 }
+
+//function cowWalk(){
+  //for (let cow of cows){
+    //cows.object3D.position.z += 0.005;
+  //}
+//}
