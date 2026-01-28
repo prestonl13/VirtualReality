@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("#cameraRig");
   collectedTxt = document.querySelector("#CollectedText");
+  skies = document.querySelector("#sky");
 
   //populate with trees
   for(let i=0;i<5;i++){
@@ -32,13 +33,8 @@ window.addEventListener("DOMContentLoaded",function() {
   for(let i = 0; i < 10; i++){
     let x = rnd(-15,15);
     let z = rnd(-15,15);
-    let cow = document.createElement("a-gltf-model");
-    cow.setAttribute("src","#cow");
-    cow.setAttribute("animation-mixer","");
-    cow.setAttribute("position",{x:x,y:1,z:z});
-
+    let cow = new Cow(x,2,z);
     cows.push(cow);
-    scene.append(cow);
   }
   //cowWalk();
   
@@ -323,6 +319,9 @@ window.addEventListener("keyup", (e) => {
 
 function countdown(){
    t--; 
+   if (t % 20 === 0) {
+     skies.setAttribute("src", "skies/night.jpg");
+   }
    timeText.setAttribute("value", `Time: ${t}`);
    if(t < 9995){
     nohunger1.setAttribute("visible", true);
