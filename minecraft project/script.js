@@ -1,8 +1,10 @@
 let rnd = (l,u) => Math.random()*(u-l)+l;
 let scene;
 let t = 10000;
+let hunger = 10;
 let trees = [];
 let cows = [];
+let steaks = [];
 let dx = rnd(-0.02,0.02);
 let dz = rnd(-0.02,0.02);
 //window.collectedCount = 0;
@@ -38,6 +40,12 @@ window.addEventListener("DOMContentLoaded",function() {
   }
   //cowWalk();
   
+  for(let i = 0; i < 10; i++){
+    let x = rnd(-15,15);
+    let z = rnd(-15,15);
+    let steak = new Steak(x,1,z);
+    steaks.push(steak);
+  }
 
   //health
 
@@ -319,47 +327,55 @@ window.addEventListener("keyup", (e) => {
 
 function countdown(){
    t--; 
-   if (t % 20 === 0) {
+   if (t % 50 === 0) {
      skies.setAttribute("src", "skies/night.jpg");
    }
+   if (t % 100 === 0) {
+     skies.setAttribute("src", "skies/sunset.jpg");
+   }
+
+    if (t % 20 === 0) {
+      hunger --;
+    }
+
    timeText.setAttribute("value", `Time: ${t}`);
-   if(t < 9995){
+   if(hunger === 9){
     nohunger1.setAttribute("visible", true);
     hunger1.setAttribute("visible", false);
    }
-   if(t < 9990){
+   if(hunger === 8){
     nohunger2.setAttribute("visible", true);
     hunger2.setAttribute("visible", false);
    }
-   if(t < 9985){
+   if(hunger === 7){
     nohunger3.setAttribute("visible", true);
     hunger3.setAttribute("visible", false);
    }
-   if(t < 9980){
+   if(hunger === 6){
     nohunger4.setAttribute("visible", true);
     hunger4.setAttribute("visible", false);
    }
-   if(t < 9975){
+   if(hunger === 5){
     nohunger5.setAttribute("visible", true);
     hunger5.setAttribute("visible", false);
    }
-   if(t < 9970){
+   if(hunger === 4){
     nohunger6.setAttribute("visible", true);
     hunger6.setAttribute("visible", false);
    }
-   if(t < 9965){
+   if(hunger === 3){
     nohunger7.setAttribute("visible", true);
     hunger7.setAttribute("visible", false);
    }
-   if(t < 9960){
+   if(hunger === 2){
     nohunger8.setAttribute("visible", true);
     hunger8.setAttribute("visible", false);
    }
-   if(t < 9955){
+   if(hunger === 1){
     nohunger9.setAttribute("visible", true);
     hunger9.setAttribute("visible", false);
    }
-   if(t < 9950){
+   if(hunger === 0){
     nohunger10.setAttribute("visible", true);
     hunger10.setAttribute("visible", false);
    }
@@ -391,19 +407,18 @@ function loop(){
     }
   
   //cow movement
-  for (let cow of cows){
-    cow.object3D.position.x += dx;
-    cow.object3D.position.z += dz;
+for (let c of cows){
+  let obj = c.cow.object3D;
+  obj.position.x += dx;
+  obj.position.z += dz;
 
-    if (cow.object3D.position.x > 15 || cow.object3D.position.x < -15){
-      dx = -dx;
-    }
-    if (cow.object3D.position.z > 15 || cow.object3D.position.z < -15){
-      dz = -dz;
-    }
-
-
+  if (obj.position.x > 15 || obj.position.x < -15){
+    dx = -dx;
   }
+  if (obj.position.z > 15 || obj.position.z < -15){
+    dz = -dz;
+  }
+}
 
 
 

@@ -20,10 +20,10 @@ class Cow {
 
     addClickListener() {
         this.cow.addEventListener("click", () => {
-            if (this.isDead) return;
+            if (this.isDead) 
+                return;
 
             this.hitCount++;
-
             this.cow.setAttribute("color", "red");
 
             //FOR CAMERA DIRECTION
@@ -33,7 +33,6 @@ class Cow {
             camObj.getWorldDirection(direction);
             direction.multiplyScalar(-0.4);
 
-     
             let pos = this.cow.getAttribute("position");
 
             let hitPos = {x: pos.x + direction.x,y: pos.y,z: pos.z + direction.z};
@@ -41,12 +40,21 @@ class Cow {
             this.cow.setAttribute("animation__hit", {property: "position",to: `${hitPos.x} ${hitPos.y} ${hitPos.z}`,dur: 150,easing: "easeOutQuad"});
 
             setTimeout(() => {
-                this.cow.setAttribute("material", "color: white");
+                this.cow.setAttribute("color", "white");
             }, 1000);
 
             if (this.hitCount >= 5) {
                 this.die();
+
+                let steak = new Steak(this.x, this.y + 1, this.z);
+
+                window.droppedBlocks = window.droppedBlocks || [];
+                window.droppedBlocks.push({
+                obj: steak.obj,
+                 type: "steak"
+                });
             }
+
         });
     }
 
