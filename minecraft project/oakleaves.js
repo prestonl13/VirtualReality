@@ -19,6 +19,7 @@ class OakLeaves{
     box.setAttribute("width","1");
     box.setAttribute("height","1");
     box.setAttribute("depth","1");
+    box.setAttribute("material", "opacity: 0; depthWrite: false;");
     this.obj.append(box);
 
 
