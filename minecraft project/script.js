@@ -2,9 +2,10 @@ let rnd = (l,u) => Math.random()*(u-l)+l;
 let scene;
 let t = 10000;
 let hunger = 10;
+let maxhunger = 10;
 let trees = [];
 let cows = [];
-let steaks = [];
+let rainy = [];
 let dx = rnd(-0.02,0.02);
 let dz = rnd(-0.02,0.02);
 //window.collectedCount = 0;
@@ -12,7 +13,8 @@ let dz = rnd(-0.02,0.02);
 window.inventory = {
   dirt: 0,
   oakLeaves: 0,
-  oakLog: 0
+  oakLog: 0,
+  steak: 0
 };
 
 window.selectedBlock = "dirt";
@@ -38,15 +40,17 @@ window.addEventListener("DOMContentLoaded",function() {
     let cow = new Cow(x,2,z);
     cows.push(cow);
   }
+
+  for(let i = 0; i<10; i++){
+    let x = 0;
+    let y = -10;
+    let z = 0;
+
+    let rain = new Rain(x,y,z);
+    rainy.push(rain);
+  }
   //cowWalk();
   
-  for(let i = 0; i < 10; i++){
-    let x = rnd(-15,15);
-    let z = rnd(-15,15);
-    let steak = new Steak(x,1,z);
-    steaks.push(steak);
-  }
-
   //health
 
 
@@ -200,6 +204,7 @@ setInterval(() => {
   window.addEventListener("keydown", (e) => { 
     if (e.key === "4") { 
       hotbar.setAttribute("src", "inventory/hotbar 4.png"); 
+      window.selectedBlock = "steak";
     }
   });
   window.addEventListener("keydown", (e) => { 
@@ -268,8 +273,22 @@ window.addEventListener("mousedown", () => {
   if (window.selectedBlock === "oakLeaves" && window.inventory.oakLeaves > 0) {
     new OakLeaves(x, y + 1, z);
     window.inventory.oakLeaves--;
+
+    
   }
+
 });
+
+window.addEventListener("mousedown", () => {
+  if (window.selectedBlock === "steak" && window.inventory.steak > 0) {
+    console.log("steak eaten");
+    console.log(hunger);
+    hunger = Math.min(hunger + 3, maxhunger);
+    window.inventory.steak--;
+  }
+
+});
+
 
 
   //jumping
@@ -339,50 +358,144 @@ function countdown(){
     }
 
    timeText.setAttribute("value", `Time: ${t}`);
+
+   if (hunger === 10){
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
+   }
    if(hunger === 9){
-    nohunger1.setAttribute("visible", true);
     hunger1.setAttribute("visible", false);
+    nohunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 8){
-    nohunger2.setAttribute("visible", true);
-    hunger2.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 7){
-    nohunger3.setAttribute("visible", true);
-    hunger3.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 6){
-    nohunger4.setAttribute("visible", true);
-    hunger4.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 5){
-    nohunger5.setAttribute("visible", true);
-    hunger5.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 4){
-    nohunger6.setAttribute("visible", true);
-    hunger6.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 3){
-    nohunger7.setAttribute("visible", true);
-    hunger7.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 2){
-    nohunger8.setAttribute("visible", true);
-    hunger8.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 1){
-    nohunger9.setAttribute("visible", true);
-    hunger9.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
    if(hunger === 0){
-    nohunger10.setAttribute("visible", true);
-    hunger10.setAttribute("visible", false);
+    hunger1.setAttribute("visible", true);
+    hunger2.setAttribute("visible", true);
+    hunger3.setAttribute("visible", true);
+    hunger4.setAttribute("visible", true);
+    hunger5.setAttribute("visible", true);
+    hunger6.setAttribute("visible", true);
+    hunger7.setAttribute("visible", true);
+    hunger8.setAttribute("visible", true);
+    hunger9.setAttribute("visible", true);
+    hunger10.setAttribute("visible", true);
    }
 }
 
 function loop(){
-  collectedTxt.setAttribute("value", `Dirt: ${inventory.dirt} | Logs: ${inventory.oakLog} | Leaves: ${inventory.oakLeaves}`);
+  collectedTxt.setAttribute("value", `Dirt: ${inventory.dirt} | Logs: ${inventory.oakLog} | Leaves: ${inventory.oakLeaves} | Steak: ${inventory.steak}`);
 
   if (inventory.dirt > 0) { 
     window.grassBlockImg.setAttribute("visible", true); 
@@ -401,6 +514,12 @@ function loop(){
     oakLeavesImg.setAttribute("visible", true); 
   } else { 
     oakLeavesImg.setAttribute("visible", false); }
+
+   let steakImg = document.querySelector("#steakinv"); 
+  if (inventory.steak > 0) { 
+    steakImg.setAttribute("visible", true); 
+  } else { 
+    steakImg.setAttribute("visible", false); }
 
     if (camera.object3D.position.y < 0.3) { 
       camera.object3D.position.y = 0.3; 

@@ -46,7 +46,7 @@ class Cow {
             if (this.hitCount >= 5) {
                 this.die();
 
-                let steak = new Steak(this.x, this.y + 1, this.z);
+                let steak = new Steak(this.x, this.y - 0.9, this.z);
 
                 window.droppedBlocks = window.droppedBlocks || [];
                 window.droppedBlocks.push({

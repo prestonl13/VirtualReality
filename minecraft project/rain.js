@@ -1,18 +1,16 @@
-class Steak {
-    constructor(x, y, z) {
+class Rain{
+    constructor(x,y,z){
         this.x = x;
-        this.y = y;
+        this.y = -100;
         this.z = z;
 
         this.obj = document.createElement("a-gltf-model");
-        this.obj.setAttribute("src", "#steak");
+        this.obj.setAttribute("src", "#rain");
         this.obj.setAttribute("position", { x, y, z });
         this.obj.setAttribute("scale", "1 1 1");
-
+        this.obj.setAttribute("animation-mixer", "");
 
         scene.append(this.obj);
 
-
-        this.obj.setAttribute("dynamic-body","shape: box; mass: 5; friction: 0.8; restitution: 0.3;");
     }
 }
