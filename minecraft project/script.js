@@ -3,6 +3,7 @@ let scene;
 let t = 10000;
 let hunger = 10;
 let maxhunger = 10;
+let minhunger = 0;
 let trees = [];
 let cows = [];
 let rainy = [];
@@ -353,145 +354,18 @@ function countdown(){
      skies.setAttribute("src", "skies/sunset.jpg");
    }
 
-    if (t % 20 === 0) {
-      hunger --;
+    if (t % 10 === 0) {
+      hunger = Math.max(hunger - 1, minhunger);
+      
     }
+   for (let i = 1; i <= 10; i++) {
+    window[`hunger${i}`].setAttribute("visible", i <= hunger);
+    window[`nohunger${i}`].setAttribute("visible", i > hunger);
+  }
 
    timeText.setAttribute("value", `Time: ${t}`);
 
-   if (hunger === 10){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 9){
-    hunger1.setAttribute("visible", false);
-    nohunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 8){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 7){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 6){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 5){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 4){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 3){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 2){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 1){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
-   if(hunger === 0){
-    hunger1.setAttribute("visible", true);
-    hunger2.setAttribute("visible", true);
-    hunger3.setAttribute("visible", true);
-    hunger4.setAttribute("visible", true);
-    hunger5.setAttribute("visible", true);
-    hunger6.setAttribute("visible", true);
-    hunger7.setAttribute("visible", true);
-    hunger8.setAttribute("visible", true);
-    hunger9.setAttribute("visible", true);
-    hunger10.setAttribute("visible", true);
-   }
+   
 }
 
 function loop(){

@@ -60,7 +60,7 @@ class Cow {
 
     die() {
         this.isDead = true;
-        this.cow.setAttribute("animation__fall", {property: "rotation",to: "90 0 0",dur: 800,easing: "easeOutQuad"});
+        this.cow.setAttribute("animation__fall", {property: "rotation",to: "0 0 90",dur: 800,easing: "easeOutQuad"});
         this.cow.setAttribute("animation__drop", {property: "position",to: `${this.x} 0 ${this.z}`,dur: 800,easing: "easeInQuad"});
     }
 }
