@@ -39,9 +39,7 @@ class Cow {
 
             this.cow.setAttribute("animation__hit", {property: "position",to: `${hitPos.x} ${hitPos.y} ${hitPos.z}`,dur: 150,easing: "easeOutQuad"});
 
-            setTimeout(() => {
-                this.cow.setAttribute("color", "white");
-            }, 1000);
+            setTimeout(() => {this.cow.setAttribute("color", "white");}, 1000);
 
             if (this.hitCount >= 5) {
                 this.die();

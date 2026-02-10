@@ -184,28 +184,45 @@ setInterval(() => {
 
   //switching inventory slots
   hotbar = document.querySelector("#emptyHotbar");
+  currentslot = document.querySelector("#currentslot");
   window.addEventListener("keydown", (e) => { 
     if (e.key === "1") { 
       hotbar.setAttribute("src", "inventory/hotbar.png");
       window.selectedBlock = "dirt";
+      currentslot.setAttribute("src", "no chamoy.png");
+      if (window.inventory.dirt > 0) {
+        currentslot.setAttribute("src", "grassblock/grassblock.webp");
+      }
     }
   });
   window.addEventListener("keydown", (e) => { 
     if (e.key === "2") { 
       hotbar.setAttribute("src", "inventory/hotbar 2.png"); 
+      currentslot.setAttribute("src", "no chamoy.png");
       window.selectedBlock = "oakLog";
+      if (window.inventory.oakLog > 0) {
+        currentslot.setAttribute("src", "oak log/oak log block.png");
+      }
     }
   });
   window.addEventListener("keydown", (e) => { 
     if (e.key === "3") { 
       hotbar.setAttribute("src", "inventory/hotbar 3.png"); 
+      currentslot.setAttribute("src", "no chamoy.png");
       window.selectedBlock = "oakLeaves";
+      if (window.inventory.oakLeaves > 0) {
+        currentslot.setAttribute("src", "oak leaves/oak leaves block.webp");
+      }
     }
   });
   window.addEventListener("keydown", (e) => { 
     if (e.key === "4") { 
       hotbar.setAttribute("src", "inventory/hotbar 4.png"); 
+      currentslot.setAttribute("src", "no chamoy.png");
       window.selectedBlock = "steak";
+      if (window.inventory.steak > 0) {
+        currentslot.setAttribute("src", "steak/steakimage.png");
+      }
     }
   });
   window.addEventListener("keydown", (e) => { 
