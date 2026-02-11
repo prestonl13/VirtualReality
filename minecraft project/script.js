@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded",function() {
     cows.push(cow);
   }
 
-  for(let i = 0; i<10; i++){
+  for(let i = 0; i<0; i++){
     let x = 0;
     let y = -10;
     let z = 0;
@@ -190,8 +190,14 @@ setInterval(() => {
       hotbar.setAttribute("src", "inventory/hotbar.png");
       window.selectedBlock = "dirt";
       currentslot.setAttribute("src", "no chamoy.png");
+      currentslot.setAttribute("position", "0.2 -0.1 -0.2");
+      currentslot.setAttribute("width", "0.15");
+      currentslot.setAttribute("height", "0.2");
       if (window.inventory.dirt > 0) {
         currentslot.setAttribute("src", "grassblock/grassblock.webp");
+        currentslot.setAttribute("width", "0.2");
+        currentslot.setAttribute("height", "0.2");
+        currentslot.setAttribute("position", "0.2 -0.15 -0.2");
       }
     }
   });
@@ -199,9 +205,15 @@ setInterval(() => {
     if (e.key === "2") { 
       hotbar.setAttribute("src", "inventory/hotbar 2.png"); 
       currentslot.setAttribute("src", "no chamoy.png");
+      currentslot.setAttribute("position", "0.2 -0.1 -0.2");
+      currentslot.setAttribute("width", "0.15");
+      currentslot.setAttribute("height", "0.2");
       window.selectedBlock = "oakLog";
       if (window.inventory.oakLog > 0) {
         currentslot.setAttribute("src", "oak log/oak log block.png");
+        currentslot.setAttribute("width", "0.2");
+        currentslot.setAttribute("height", "0.2");
+        currentslot.setAttribute("position", "0.2 -0.15 -0.2");
       }
     }
   });
@@ -209,9 +221,15 @@ setInterval(() => {
     if (e.key === "3") { 
       hotbar.setAttribute("src", "inventory/hotbar 3.png"); 
       currentslot.setAttribute("src", "no chamoy.png");
+      currentslot.setAttribute("position", "0.2 -0.1 -0.2");
+      currentslot.setAttribute("width", "0.15");
+      currentslot.setAttribute("height", "0.2");
       window.selectedBlock = "oakLeaves";
       if (window.inventory.oakLeaves > 0) {
         currentslot.setAttribute("src", "oak leaves/oak leaves block.webp");
+        currentslot.setAttribute("width", "0.2");
+        currentslot.setAttribute("height", "0.2");
+        currentslot.setAttribute("position", "0.2 -0.15 -0.2");
       }
     }
   });
@@ -219,9 +237,15 @@ setInterval(() => {
     if (e.key === "4") { 
       hotbar.setAttribute("src", "inventory/hotbar 4.png"); 
       currentslot.setAttribute("src", "no chamoy.png");
+      currentslot.setAttribute("position", "0.2 -0.1 -0.2");
+      currentslot.setAttribute("width", "0.15");
+      currentslot.setAttribute("height", "0.2");
       window.selectedBlock = "steak";
       if (window.inventory.steak > 0) {
         currentslot.setAttribute("src", "steak/steakimage.png");
+        currentslot.setAttribute("width", "0.2");
+        currentslot.setAttribute("height", "0.2");
+        currentslot.setAttribute("position", "0.2 -0.15 -0.2");
       }
     }
   });
@@ -371,7 +395,7 @@ function countdown(){
      skies.setAttribute("src", "skies/sunset.jpg");
    }
 
-    if (t % 10 === 0) {
+    if (t % 20 === 0) {
       hunger = Math.max(hunger - 1, minhunger);
       
     }
@@ -391,26 +415,30 @@ function loop(){
   if (inventory.dirt > 0) { 
     window.grassBlockImg.setAttribute("visible", true); 
   } else {
-     window.grassBlockImg.setAttribute("visible", false); 
+    window.grassBlockImg.setAttribute("visible", false); 
     }
 
   let oakLogImg = document.querySelector("#oaklog"); 
   if (inventory.oakLog > 0) { 
-    oakLogImg.setAttribute("visible", true); 
+    oakLogImg.setAttribute("visible", true);
   } else { 
-    oakLogImg.setAttribute("visible", false); }
+    oakLogImg.setAttribute("visible", false); 
+    
+  }
 
   let oakLeavesImg = document.querySelector("#oakleaves"); 
   if (inventory.oakLeaves > 0) { 
     oakLeavesImg.setAttribute("visible", true); 
   } else { 
-    oakLeavesImg.setAttribute("visible", false); }
+    oakLeavesImg.setAttribute("visible", false);
+  }
 
    let steakImg = document.querySelector("#steakinv"); 
   if (inventory.steak > 0) { 
     steakImg.setAttribute("visible", true); 
   } else { 
-    steakImg.setAttribute("visible", false); }
+    steakImg.setAttribute("visible", false);
+  }
 
     if (camera.object3D.position.y < 0.3) { 
       camera.object3D.position.y = 0.3; 
@@ -450,8 +478,3 @@ function distance(obj1,obj2){
   return d;
 }
 
-//function cowWalk(){
-  //for (let cow of cows){
-    //cows.object3D.position.z += 0.005;
-  //}
-//}
