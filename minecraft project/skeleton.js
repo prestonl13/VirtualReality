@@ -19,31 +19,35 @@ class Skeleton {
     }
 
 
-walk(playerPos) {
+walk(targetPos) {
     if (this.isDead) return;
 
     const obj = this.skeleton.object3D;
 
-    // Direction vector
-    const dx = playerPos.x - obj.position.x;
-    const dz = playerPos.z - obj.position.z;
+    const dx = targetPos.x - obj.position.x;
+    const dz = targetPos.z - obj.position.z;
     const dist = Math.hypot(dx, dz);
 
-    // Rotate to face player (Three.js models face -Z)
-    obj.rotation.y = Math.atan2(dx, dz) + Math.PI;
+
+    const angle = Math.atan2(dx, dz);
+    obj.rotation.y = angle; 
 
     const attackRange = 1.2;
-    const moveSpeed = 0.02;
+    const speed = 0.25; 
 
     if (dist > attackRange) {
-        // Move toward player
-        obj.position.x += (dx / dist) * moveSpeed;
-        obj.position.z += (dz / dist) * moveSpeed;
-
-        this.skeleton.setAttribute("animation-mixer", "clip: walk");
+        obj.position.x += (dx / dist) * speed;
+        obj.position.z += (dz / dist) * speed;
+        this.setClip('walk');
     } else {
-        // Attack animation
-        this.skeleton.setAttribute("animation-mixer", "clip: aim");
+        this.setClip('aim');
+    }
+}
+
+setClip(clip) {
+    const currentClip = this.skeleton.getAttribute("animation-mixer").clip;
+    if (currentClip !== clip) {
+        this.skeleton.setAttribute("animation-mixer", `clip: ${clip}`);
     }
 }
 

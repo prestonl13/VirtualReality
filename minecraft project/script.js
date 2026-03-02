@@ -475,8 +475,8 @@ for (let c of cows){
 }
 
 // skeleton behaviour: walk toward camera each frame
-const rig = document.querySelector("#cameraRig");
-const playerPos = rig.object3D.position;
+const cam = document.querySelector("#camera");
+const playerPos = cam.object3D.getWorldPosition(new THREE.Vector3());
 for (let s of skellys) {
   s.walk(playerPos);
 }
