@@ -6,7 +6,9 @@ let maxhunger = 10;
 let minhunger = 0;
 let trees = [];
 let cows = [];
-let rainy = [];
+let skellys = [];
+//let rainy = [];
+let blocks = [];
 let dx = rnd(-0.02,0.02);
 let dz = rnd(-0.02,0.02);
 //window.collectedCount = 0;
@@ -35,21 +37,35 @@ window.addEventListener("DOMContentLoaded",function() {
   }
 
   //cows
-  for(let i = 0; i < 10; i++){
+  for(let i = 0; i < 5; i++){
     let x = rnd(-15,15);
     let z = rnd(-15,15);
     let cow = new Cow(x,2,z);
     cows.push(cow);
   }
 
-  for(let i = 0; i<0; i++){
+  //skeletons
+  if (t % 50 === 0) {
+    for(let i = 0; i < 5; i++){
+      let x = rnd(-15,15);
+      let z = rnd(-15,15);
+      let skeleton = new Skeleton(x,2,z);
+      skellys.push(skeleton);
+    }
+  }
+
+
+
+  for(let i = 0; i<10; i++){
     let x = 0;
-    let y = -10;
+    let y = 5;
     let z = 0;
 
-    let rain = new Rain(x,y,z);
-    rainy.push(rain);
+    let block = new Blockgrass(x,y,z);
+    blocks.push(block);
+    console.log('blocks pushed');
   }
+
   //cowWalk();
   
   //health
@@ -444,7 +460,7 @@ function loop(){
       camera.object3D.position.y = 0.3; 
     }
   
-  //cow movement
+  // cow movement
 for (let c of cows){
   let obj = c.cow.object3D;
   obj.position.x += dx;
@@ -456,6 +472,13 @@ for (let c of cows){
   if (obj.position.z > 15 || obj.position.z < -15){
     dz = -dz;
   }
+}
+
+// skeleton behaviour: walk toward camera each frame
+const rig = document.querySelector("#cameraRig");
+const playerPos = rig.object3D.position;
+for (let s of skellys) {
+  s.walk(playerPos);
 }
 
 
@@ -477,4 +500,5 @@ function distance(obj1,obj2){
   let d = Math.sqrt(Math.pow(x1-x2,2) + Math.pow(y1-y2,2) + Math.pow(z1-z2,2));
   return d;
 }
+
 
