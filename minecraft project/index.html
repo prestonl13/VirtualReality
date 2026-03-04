@@ -25,6 +25,11 @@
   <a-plane static-body="friction: 0.8; restitution: 0;" color="green" rotation="-90 0 0" side="double" width="50" height="50" opacity="0.5"></a-plane>
   <a-sky id="sky" src="skies/sunset.jpg" rotation="0 -90 0" side="double"></a-sky>
 
+  <!-- Lighting -->
+  <a-entity id="ambientLight" light="type: ambient; color: #8899aa; intensity: 0.5"></a-entity>
+  <a-entity id="directionalLight" light="type: directional; color: #ffffff; intensity: 0.9" position="0.5 1 0.5" rotation="-45 45 0"></a-entity>
+  <a-entity id="pointLight" light="type: point; color: #ffeebb; intensity: 0.6; distance: 20" position="-2 2 -2"></a-entity>
+
 
   <!-- Models -->
 
@@ -39,7 +44,7 @@
     <a-entity id="cameraRig" position="0 1.5 0">
     <a-camera id="camera" kinema-body="radius: 0.7" look-controls="pointerLockEnabled: true">
 
-
+        <a-image id="deathscreen" src="deathscreen.png" position="0 0 -1" width="1.5" height="1" visible="false"></a-image>
         
         <a-image id = "currentslot" src = "no chamoy.png" position ="0.2 -0.1 -0.2" width="0.15" height="0.2"></a-image> 
         <a-image id = "emptyHotbar" src = "inventory/hotbar.png" position ="0 -0.078 -0.1" width="0.09" height="0.012"></a-image>

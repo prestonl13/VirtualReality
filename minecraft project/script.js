@@ -4,9 +4,12 @@ let t = 10000;
 let hunger = 10;
 let maxhunger = 10;
 let minhunger = 0;
+let health = 10;
+let minhealth = 0;
 let trees = [];
 let cows = [];
 let skellys = [];
+let lastHit = 0;
 //let rainy = [];
 let blocks = [];
 let dx = rnd(-0.02,0.02);
@@ -45,14 +48,18 @@ window.addEventListener("DOMContentLoaded",function() {
   }
 
   //skeletons
-  if (t % 50 === 0) {
-    for(let i = 0; i < 5; i++){
+  for(let i = 0; i < 1; i++){
       let x = rnd(-15,15);
       let z = rnd(-15,15);
+
+
+
+      if (Math.abs(x) < 4) x += 6 * Math.sign(x || 1);
+      if (Math.abs(z) < 4) z += 6 * Math.sign(z || 1);
+
       let skeleton = new Skeleton(x,2,z);
       skellys.push(skeleton);
     }
-  }
 
 
 
@@ -92,6 +99,21 @@ window.addEventListener("DOMContentLoaded",function() {
   blackheart8 = document.querySelector("#blackheart8");
   blackheart9 = document.querySelector("#blackheart9");
   blackheart10 = document.querySelector("#blackheart10");
+
+  function resetHearts() {
+  health = 10;
+  for (let i = 1; i <= 10; i++) {
+    window[`fullheart${i}`].setAttribute("visible", true);
+    window[`blackheart${i}`].setAttribute("visible", false);
+  }
+}
+
+
+
+
+resetHearts();
+
+
 
 
   //hunger
@@ -420,6 +442,10 @@ function countdown(){
     window[`nohunger${i}`].setAttribute("visible", i > hunger);
   }
 
+
+
+
+
    timeText.setAttribute("value", `Time: ${t}`);
 
    
@@ -474,12 +500,39 @@ for (let c of cows){
   }
 }
 
-// skeleton behaviour: walk toward camera each frame
+// skeleton movement and health
 const cam = document.querySelector("#camera");
 const playerPos = cam.object3D.getWorldPosition(new THREE.Vector3());
 for (let s of skellys) {
   s.walk(playerPos);
 }
+
+  for (let s of skellys) {
+
+  let skellyObj = s.skeleton;
+  let d = distance(camera, skellyObj);
+
+  if (d < 2) {
+
+    let now = Date.now();
+
+    if (now - lastHit > 500) {  
+      health = Math.max(health - 1, minhealth);
+      lastHit = now;
+        for (let i = 1; i <= 10; i++) {
+           window[`fullheart${i}`].setAttribute("visible", i <= health);
+          window[`blackheart${i}`].setAttribute("visible", i > health);
+      }
+
+      
+      if (health === 0) {
+        let deathscreen = document.querySelector("#deathscreen");
+        deathscreen.setAttribute("visible", "true");
+      }
+    }
+  }
+}
+
 
 
 
