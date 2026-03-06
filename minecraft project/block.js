@@ -16,12 +16,14 @@ class Block{
 
     
     this.obj = document.createElement("a-entity");
+    this.obj.classList.add("clickable");
     this.obj.setAttribute("static-body", "shape: box; friction: 1.0; restitution: 0;");
     //this.obj.setAttribute("static-body", " ");
     this.obj.setAttribute("position",{x:x,y:y,z:z});    
     this.obj.setAttribute("cursor-listener", "");
 
     let box = document.createElement("a-box");
+    box.classList.add("clickable");
     box.setAttribute("id","Block");
     box.setAttribute("width","1");
     box.setAttribute("height","1");
@@ -31,6 +33,7 @@ class Block{
 
 
     let top = document.createElement("a-plane");
+    top.classList.add("clickable");
     top.setAttribute("width","1");
     top.setAttribute("height","1");
     top.setAttribute("src", "grassblock/top.png")
@@ -41,6 +44,7 @@ class Block{
 
     // Right face (+X)
     let right = document.createElement("a-plane");
+    right.classList.add("clickable");
     right.setAttribute("width","1");
     right.setAttribute("height","1");
     right.setAttribute("side","double");
@@ -51,6 +55,7 @@ class Block{
 
     // Left face (-X)
     let left = document.createElement("a-plane");
+    left.classList.add("clickable");
     left.setAttribute("width","1");
     left.setAttribute("height","1");
     left.setAttribute("side","double");
@@ -61,6 +66,7 @@ class Block{
 
     // Front face (+Z)
     let front = document.createElement("a-plane");
+    front.classList.add("clickable");
     front.setAttribute("width","1");
     front.setAttribute("height","1");
     front.setAttribute("side","double");
@@ -71,6 +77,7 @@ class Block{
 
     // Back face (-Z)
     let back = document.createElement("a-plane");
+    back.classList.add("clickable");
     back.setAttribute("width","1");
     back.setAttribute("height","1");
     back.setAttribute("src", "grassblock/side.jpg");
@@ -81,6 +88,7 @@ class Block{
 
     // Bottom face
     let bottom = document.createElement("a-plane");
+    bottom.classList.add("clickable");
     bottom.setAttribute("width","1");
     bottom.setAttribute("height","1");
     bottom.setAttribute("side","double");
@@ -90,6 +98,7 @@ class Block{
     this.obj.append(bottom);
 
     let frame = document.createElement("a-box");
+    frame.classList.add("clickable");
     frame.setAttribute("width","1.01");
     frame.setAttribute("height","1.01");
     frame.setAttribute("depth","1.01");

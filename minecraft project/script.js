@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded",function() {
   }
 
   //skeletons
+  setTimeout(() => {
   for(let i = 0; i < 1; i++){
       let x = rnd(-15,15);
       let z = rnd(-15,15);
@@ -59,8 +60,7 @@ window.addEventListener("DOMContentLoaded",function() {
 
       let skeleton = new Skeleton(x,2,z);
       skellys.push(skeleton);
-    }
-
+    }}, 2000);
 
 
   for(let i = 0; i<10; i++){
@@ -491,6 +491,7 @@ for (let c of cows){
   let obj = c.cow.object3D;
   obj.position.x += dx;
   obj.position.z += dz;
+  c.update();
 
   if (obj.position.x > 15 || obj.position.x < -15){
     dx = -dx;

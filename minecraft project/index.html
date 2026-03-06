@@ -99,7 +99,9 @@
         <a-image id = "nohunger3" src = "health and food/nofood.png" position = "0.036 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
         <a-image id = "nohunger2" src = "health and food/nofood.png" position = "0.040 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
         <a-image id = "nohunger1" src = "health and food/nofood.png" position = "0.044 -0.068 -0.1" width = "0.0057" height = "0.0057" visible = "false"></a-image>
-        <a-cursor>
+
+        
+        <a-cursor  cursor="rayOrigin: mouse" raycaster="objects: .clickable">
         <!-- This is just a timer for now bc we cant put colons as a variable  -->
              <a-text id="timeText" position="-3.5 1.5 -1" value="Time: " color="blue"></a-text>
               <a-text id = "CollectedText" position = "-3.5 1.2 -1" value = "Collected Blocks Counter: " color = "blue"></a-text>

@@ -9,12 +9,14 @@ class OakLeaves{
     this.breakable = true;
     this.camera = document.querySelector("#cameraRig");
     this.obj = document.createElement("a-entity");
+    this.obj.classList.add("clickable");
     this.obj.setAttribute("static-body", "shape: box; friction: 1.0; restitution: 0;");
     //this.obj.setAttribute("static-body", " ");
     this.obj.setAttribute("position",{x:x,y:y,z:z});    
     this.obj.setAttribute("cursor-listener", "");
 
     let box = document.createElement("a-box");
+    box.classList.add("clickable");
     box.setAttribute("id","Block");
     box.setAttribute("width","1");
     box.setAttribute("height","1");
@@ -24,6 +26,7 @@ class OakLeaves{
 
 
     let top = document.createElement("a-plane");
+    top.classList.add("clickable");
     top.setAttribute("width","1.001");
     top.setAttribute("height","1.001");
     top.setAttribute("src", "oak leaves/oak leave.png")
@@ -34,6 +37,7 @@ class OakLeaves{
 
     // Right face (+X)
     let right = document.createElement("a-plane");
+    right.classList.add("clickable");
     right.setAttribute("width","1.001");
     right.setAttribute("height","1.001");
     right.setAttribute("side","double");
@@ -44,6 +48,7 @@ class OakLeaves{
 
     // Left face (-X)
     let left = document.createElement("a-plane");
+    left.classList.add("clickable");
     left.setAttribute("width","1.001");
     left.setAttribute("height","1.001");
     left.setAttribute("side","double");
@@ -54,6 +59,7 @@ class OakLeaves{
 
     // Front face (+Z)
     let front = document.createElement("a-plane");
+    front.classList.add("clickable");
     front.setAttribute("width","1.001");
     front.setAttribute("height","1.001");
     front.setAttribute("side","double");
@@ -64,6 +70,7 @@ class OakLeaves{
 
     // Back face (-Z)
     let back = document.createElement("a-plane");
+    back.classList.add("clickable");
     back.setAttribute("width","1.001");
     back.setAttribute("height","1.001");
     back.setAttribute("src", "oak leaves/oak leave.png");
@@ -74,6 +81,7 @@ class OakLeaves{
 
     // Bottom face
     let bottom = document.createElement("a-plane");
+    bottom.classList.add("clickable");
     bottom.setAttribute("width","1.001");
     bottom.setAttribute("height","1.001");
     bottom.setAttribute("side","double");
@@ -83,6 +91,7 @@ class OakLeaves{
     this.obj.append(bottom);
 
     let frame = document.createElement("a-box");
+    frame.classList.add("clickable");
     frame.setAttribute("width","1.01");
     frame.setAttribute("height","1.01");
     frame.setAttribute("depth","1.01");

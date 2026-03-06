@@ -14,7 +14,22 @@ class Skeleton {
         this.skeleton.setAttribute("animation-mixer", "clip: idle");
         this.skeleton.setAttribute("position", { x: x, y: 1, z: z });
 
+
+
         scene.append(this.skeleton);
+
+        // Invisible hitbox for reliable clicking ADDED
+        this.hitbox = document.createElement("a-box");
+        this.hitbox.setAttribute("position", { x: x, y: 1.5, z: z });
+        this.hitbox.setAttribute("width", 1);
+        this.hitbox.setAttribute("height", 3);
+        this.hitbox.setAttribute("depth", 1);
+        this.hitbox.setAttribute("opacity", 0);
+        this.hitbox.setAttribute("transparent", true);
+        this.hitbox.classList.add("clickable");
+
+        scene.append(this.hitbox);
+
         this.addClickListener();
     }
 
@@ -38,6 +53,10 @@ walk(targetPos) {
     if (dist > attackRange) {
         obj.position.x += (dx / dist) * speed;
         obj.position.z += (dz / dist) * speed;
+        // Make hitbox follow skeleton ADDED
+        this.hitbox.object3D.position.copy(this.skeleton.object3D.position);
+        this.hitbox.object3D.position.y += 0.5;
+
         this.setClip('walk');
     } else {
         this.setClip('aim');
@@ -53,34 +72,72 @@ setClip(clip) {
 
 
 
-addClickListener() {
-    this.skeleton.addEventListener("click", () => {
-        if (this.isDead) 
-            return;
+//addClickListener() {
+    //this.skeleton.addEventListener("click", () => {
+        //if (this.isDead) 
+            //return;
 
-        this.hitCount++;
+        //this.hitCount++;
 
         //FOR CAMERA DIRECTION
-        const camera = document.querySelector("#camera");
-        const camObj = camera.object3D;
-        const direction = new THREE.Vector3();
-        camObj.getWorldDirection(direction);
-        direction.multiplyScalar(-0.4);
+        //const camera = document.querySelector("#camera");
+        //const camObj = camera.object3D;
+        //const direction = new THREE.Vector3();
+        //camObj.getWorldDirection(direction);
+        //direction.multiplyScalar(-0.4);
 
-        let pos = this.skeleton.getAttribute("position");
+        //let pos = this.skeleton.getAttribute("position");
 
-        let hitPos = {x: pos.x + direction.x,y: pos.y,z: pos.z + direction.z};
+        //let hitPos = {x: pos.x + direction.x,y: pos.y,z: pos.z + direction.z};
 
-        this.skeleton.setAttribute("animation__hit", {property: "position",to: `${hitPos.x} ${hitPos.y} ${hitPos.z}`,dur: 150,easing: "easeOutQuad"});
+        //this.skeleton.setAttribute("animation__hit", {property: "position",to: `${hitPos.x} ${hitPos.y} ${hitPos.z}`,dur: 150,easing: "easeOutQuad"});
 
-        setTimeout(() => {this.skeleton.setAttribute("color", "white");}, 1000);
+        //setTimeout(() => {this.skeleton.setAttribute("color", "white");}, 1000);
 
-        if (this.hitCount >= 5) {
-                this.die();
-            }
+        //if (this.hitCount >= 5) {
+                //this.die();
+            //}
 
+   // });
+//}
+
+//EVERYTHING BELOW IS ADDED
+addClickListener() {
+    this.hitbox.addEventListener("click", () => {
+        if (this.isDead) return;
+        this.takeHit();
+        console.log("HITBOX CLICKED");
     });
 }
+
+takeHit() {
+    this.hitCount++;
+
+    const camera = document.querySelector("#camera");
+    const camObj = camera.object3D;
+    const direction = new THREE.Vector3();
+    camObj.getWorldDirection(direction);
+    direction.multiplyScalar(-0.4);
+
+    let pos = this.skeleton.object3D.position;
+    let hitPos = {
+        x: pos.x + direction.x,
+        y: pos.y,
+        z: pos.z + direction.z
+    };
+
+    this.skeleton.setAttribute("animation__hit", {
+        property: "position",
+        to: `${hitPos.x} ${hitPos.y} ${hitPos.z}`,
+        dur: 150,
+        easing: "easeOutQuad"
+    });
+
+    if (this.hitCount >= 5) {
+        this.die();
+    }
+}
+
 
 die() {
     this.isDead = true;
