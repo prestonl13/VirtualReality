@@ -10,6 +10,7 @@ let trees = [];
 let cows = [];
 let skellys = [];
 let lastHit = 0;
+let dead = false;
 //let rainy = [];
 let blocks = [];
 let dx = rnd(-0.02,0.02);
@@ -364,6 +365,13 @@ window.addEventListener("mousedown", () => {
     console.log("steak eaten");
     console.log(hunger);
     hunger = Math.min(hunger + 3, maxhunger);
+    if (health < 10) {
+      health = Math.min(health + 2, 10);
+      for (let i = 1; i <= 10; i++) {
+        window[`fullheart${i}`].setAttribute("visible", i <= health);
+        window[`blackheart${i}`].setAttribute("visible", i > health);
+      }
+    }
     window.inventory.steak--;
   }
 
@@ -452,6 +460,7 @@ function countdown(){
 }
 
 function loop(){
+  if (dead === true) return;
   collectedTxt.setAttribute("value", `Dirt: ${inventory.dirt} | Logs: ${inventory.oakLog} | Leaves: ${inventory.oakLeaves} | Steak: ${inventory.steak}`);
 
   if (inventory.dirt > 0) { 
@@ -526,9 +535,16 @@ for (let s of skellys) {
       }
 
       
-      if (health === 0) {
+      if (health === 0 && !dead) {
         let deathscreen = document.querySelector("#deathscreen");
         deathscreen.setAttribute("visible", "true");
+        dead = true;
+
+        window.addEventListener("keydown", (e) => {
+          if (e.key === "r" || e.key === "R") {
+            window.location.reload();
+          }
+        });
       }
     }
   }

@@ -1,0 +1,126 @@
+html, body{
+  height:110%;
+  font-family: 'Minecrafter';
+  margin:0 auto;
+  background-image: url('https://assets.badlion.net/blog/minecraft-backgrounds/minecraft-mods-back.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container{
+  display:flex;
+}
+
+.image{
+  border-radius: 10px;
+  max-width: 600px;
+  max-height: 100%;
+  display: block;
+  margin: 10px;
+}
+
+.imagebox{
+  height: 350px;
+  width: 550px;
+}
+
+.textbox{
+  padding:20px;
+  border: 5px;
+  border-color: #194F29 ;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 10px;
+  flex: 1 1;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease-in;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transition: transform 0.4s ease,  box-shadow 0.4s ease;
+}
+
+.textbox:hover{
+  transform: translateY(0px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+
+}
+
+.textbox:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.textbox:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+.textbox:nth-of-type(3) {
+  animation-delay: 1s;
+}
+
+.column{
+  flex-direction:column;
+}
+
+.row{
+  flex-direction: row;
+}
+
+.center{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer{
+  background-color: #FFFFFF;
+  color: #aec6ef;
+  padding:20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+nav a:hover{
+  background-color:#4E9E41;
+  color: white;
+  transition:2s;
+}
+
+.links{
+  font-size: 70px;
+}
+
+.heading{
+  background-image: url("https://4kwallpapers.com/images/wallpapers/minecraft-8k-video-7680x4320-16364.png");
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Minecrafter, "30 san serif";
+}
+
+.title{
+    font-family: Minecrafter, "30 san serif";
+    color: #1f3053;
+    text-shadow: -5px -5px white;
+    font-size: 150px;
+}
+
+.text{
+  font-family: Minecrafter, "30 san serif";
+  color: #1f3053;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(1);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0) scale(1);
+  }
+}
+
